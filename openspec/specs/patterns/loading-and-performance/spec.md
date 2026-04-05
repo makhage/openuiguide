@@ -101,6 +101,13 @@ Network failures happen. APIs timeout. If a component fails to load and shows no
 | REQ-LOAD-004 | Prevent Layout Shift | SHOULD | Yes |
 | REQ-LOAD-005 | Error Recovery for Failed Loads | MUST | Heuristic |
 
+## Platform Implementation Notes
+
+- **Web:** Use `loading="lazy"` on images, `Suspense` boundaries in React, and CSS `content-visibility: auto` for off-screen content. Reserve explicit dimensions with `width`/`height` attributes or `aspect-ratio` CSS to prevent CLS.
+- **iOS (SwiftUI):** Use `ProgressView()` for loading indicators, `redacted(reason: .placeholder)` for skeleton screens. Use `task {}` modifier for async data loading with automatic cancellation.
+- **Android (Compose):** Use `CircularProgressIndicator` or `LinearProgressIndicator`. For skeletons, use `Modifier.placeholder()` from Accompanist. Use `LaunchedEffect` for async loading.
+- **React Native:** Use `ActivityIndicator` for spinners, `FlatList` with `onEndReached` for progressive loading. Use `FastImage` for optimized image loading with placeholders.
+
 ## Further Reading
 
 - [Web.dev: Optimize CLS](https://web.dev/articles/optimize-cls)

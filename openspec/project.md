@@ -1,5 +1,7 @@
 # OpenUI Guide — Project Overview
 
+**Version:** 1.0.0
+
 ## Identity
 
 OpenUI Guide is a universal UI design companion for developers building user interfaces with AI assistance. It codifies professional design knowledge from the world's leading design systems into formal, machine-readable specifications that AI coding assistants can use to review, educate, and refine UI code.
@@ -158,3 +160,13 @@ Format: `REQ-[CATEGORY]-[NUMBER]`
 | Components | Material Design 3 Components, Apple HIG Components, WAI-ARIA Component Patterns |
 | Responsive | Ethan Marcotte's Responsive Web Design, Material Adaptive Layout, Apple Layout Guidelines |
 | Platforms | MDN Web Docs, SwiftUI Documentation, Jetpack Compose Docs, Flutter Documentation |
+
+## Versioning
+
+This project follows semantic versioning (MAJOR.MINOR.PATCH) to communicate the impact of spec changes to downstream projects. In brief:
+
+- **MAJOR** — Removing requirements or raising enforcement levels (e.g., SHOULD to MUST). May break compliance for existing projects.
+- **MINOR** — Adding new requirements or new spec categories. Existing compliant projects remain compliant.
+- **PATCH** — Clarifications, typo fixes, and additional platform notes. No change in requirements or enforcement.
+
+For the full versioning policy, pinning strategies, changelog format, and migration guide conventions, see [VERSIONING.md](/VERSIONING.md).

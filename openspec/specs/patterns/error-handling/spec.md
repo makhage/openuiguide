@@ -104,6 +104,13 @@ The default browser 404 page is a dead end. A custom error page maintains your b
 | REQ-ERR-004 | Graceful Degradation | SHOULD | Manual |
 | REQ-ERR-005 | 404 and Error Pages | SHOULD | Heuristic |
 
+## Platform Implementation Notes
+
+- **Web:** Use `aria-live="assertive"` for error messages so screen readers announce them. Use `<output>` or inject messages into labeled regions. Browser-native validation (`required`, `pattern`) provides baseline inline validation.
+- **iOS (SwiftUI):** Use `.alert()` for destructive confirmations. For inline validation, update `Text` views with error styling on field change. Use `accessibilityLabel` to ensure errors are announced.
+- **Android (Compose):** Use `Snackbar` for transient errors, `AlertDialog` for destructive confirmations. `TextFieldDefaults` supports `isError` state. Error messages should use `semantics { error("...") }`.
+- **React Native:** Use `Alert.alert()` for confirmations. For inline validation, conditionally render `Text` components with error styling beneath inputs. Set `accessibilityLiveRegion="assertive"` on error messages.
+
 ## Further Reading
 
 - [NNGroup: Error Message Guidelines](https://www.nngroup.com/articles/error-message-guidelines/)

@@ -1,12 +1,16 @@
 # OpenUI Guide
 
+[![Spec Validation](https://github.com/makhage/openuiguide/actions/workflows/validate-specs.yml/badge.svg)](https://github.com/makhage/openuiguide/actions/workflows/validate-specs.yml)
+[![OpenUI Guide v1.0.0](https://img.shields.io/badge/OpenUI_Guide-v1.0.0-6366f1?style=flat-square)](https://github.com/makhage/openuiguide)
+[![WCAG 2.2 AA](https://img.shields.io/badge/WCAG_2.2-AA_Compliant-22c55e?style=flat-square)](https://github.com/makhage/openuiguide)
+
 A universal UI design companion for developers building interfaces with AI assistance. OpenUI Guide codifies professional design knowledge from the world's leading design systems into formal, machine-readable specifications that AI coding assistants can use to review, educate, and refine UI code.
 
 ## What It Does
 
 Point it at any UI codebase and get a professional design review:
 
-- **Audits** your code against ~200 design requirements across 26 spec categories
+- **Audits** your code against 189 design requirements across 29 spec categories
 - **Explains** why each guideline matters — teaches design thinking, not just rules
 - **Suggests fixes** with concrete, platform-specific code changes
 - **Respects creativity** — hard rules only for accessibility; everything else is guidance
@@ -19,7 +23,7 @@ Point it at any UI codebase and get a professional design review:
 | **Foundations** | Spacing, typography, color, visual hierarchy, iconography, motion |
 | **Components** | Buttons, forms, navigation, cards, modals, lists, feedback |
 | **Patterns** | Responsive design, dark mode, loading states, onboarding, error handling |
-| **Platforms** | Web (HTML/CSS/JS), iOS (SwiftUI), Android (Compose), Flutter, React Native |
+| **Platforms** | Web, iOS, Android, Desktop (Electron/Tauri), TV (tvOS/Android TV), Wearable (watchOS/Wear OS), Cross-platform (Flutter/React Native) |
 
 ## Enforcement Levels
 
@@ -134,8 +138,28 @@ openspec/
 │       ├── web/
 │       ├── ios/
 │       ├── android/
-│       └── cross-platform/
+│       ├── cross-platform/
+│       ├── desktop/
+│       ├── tv/
+│       └── wearable/
+├── specs.json                    # Machine-readable spec index (auto-generated)
 └── changes/                     # Proposals for new rules
+
+scripts/
+├── validate-specs.sh             # Bash spec validator
+├── validate-spec-format.js       # Node.js spec validator (CI-ready)
+└── generate-specs-json.js        # Regenerates specs.json from spec files
+
+docs/
+├── checklist.md                  # Quick-reference checklist of all 189 requirements
+├── comparison.md                 # Mapping to Material Design 3, Apple HIG, etc.
+└── badges.md                    # Shields.io badges for your README
+
+examples/
+├── sample-app/                   # Dashboard with intentional design issues
+│   ├── index.html
+│   └── styles.css
+└── sample-review-output.md       # What a /design-review produces
 ```
 
 ## Authoritative Sources
@@ -150,12 +174,39 @@ Every requirement cites its source:
 - **MDN Web Docs** — Web platform reference
 - **Butterick's Practical Typography** — Typography principles
 
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Checklist](docs/checklist.md) | Quick-reference of all 189 requirements with checkboxes |
+| [Comparison](docs/comparison.md) | How OpenUI Guide maps to Material Design 3, Apple HIG, etc. |
+| [Badges](docs/badges.md) | Shields.io badges for your project README |
+| [Versioning](VERSIONING.md) | Semantic versioning strategy for specs |
+| [Contributing](CONTRIBUTING.md) | How to add requirements and propose new specs |
+| [Example Review](examples/sample-review-output.md) | Sample review output from the design-review skill |
+
+## Machine-Readable Specs
+
+`openspec/specs.json` provides a structured JSON index of all requirements for tooling beyond Claude:
+
+```bash
+# Regenerate after changing specs
+node scripts/generate-specs-json.js
+
+# Validate all specs follow the correct format
+bash scripts/validate-specs.sh
+node scripts/validate-spec-format.js
+```
+
 ## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide. Quick start:
 
 1. Create a folder under `openspec/changes/<your-change-name>/`
 2. Add a `proposal.md` explaining what rules to add/modify and why
 3. Follow the requirement format in `openspec/project.md`
-4. Submit a pull request
+4. Run `bash scripts/validate-specs.sh` to verify your changes
+5. Submit a pull request
 
 ## License
 

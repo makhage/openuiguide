@@ -86,6 +86,13 @@ The first screen after signup/login sets expectations. A blank dashboard with no
 | REQ-ONBOARD-003 | Minimal Signup Friction | CONSIDER | Manual |
 | REQ-ONBOARD-004 | First-Run Experience | CONSIDER | Manual |
 
+## Platform Implementation Notes
+
+- **Web:** Use conditional rendering to show empty states when data arrays are empty. Store first-run flags in `localStorage`. Use CSS animations for subtle empty-state illustrations.
+- **iOS (SwiftUI):** Use `ContentUnavailableView` (iOS 17+) for empty states. Store first-run state in `@AppStorage`. Use `sheet()` for lightweight onboarding overlays.
+- **Android (Compose):** Show empty states with conditional composition when lists are empty. Use `DataStore` for first-run preferences. Use `ModalBottomSheet` for onboarding steps.
+- **React Native:** Use conditional rendering with `FlatList`'s `ListEmptyComponent` prop. Store onboarding state with `AsyncStorage`. Use bottom sheets or modal overlays for guided tours.
+
 ## Further Reading
 
 - [NNGroup: Onboarding UX](https://www.nngroup.com/articles/onboarding-ux/)

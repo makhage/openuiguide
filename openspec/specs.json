@@ -1,0 +1,3580 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-04-05",
+  "categories": {
+    "accessibility": {
+      "operable": {
+        "title": "Accessibility: Operable",
+        "spec_path": "openspec/specs/accessibility/operable/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-A11Y-O-001",
+            "title": "Keyboard Accessibility",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "all"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "keyboard",
+              "accessibility"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-002",
+            "title": "Focus Order",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "focus",
+              "order"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-003",
+            "title": "Focus Visibility",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "focus",
+              "visibility"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-004",
+            "title": "No Keyboard Traps",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "keyboard",
+              "traps"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-005",
+            "title": "Focus Management for Dynamic Content",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "focus",
+              "management",
+              "dynamic"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-006",
+            "title": "Touch Target Size",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "touch",
+              "target",
+              "size"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-007",
+            "title": "Timing and Time Limits",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "timing",
+              "time",
+              "limits"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-008",
+            "title": "Skip Navigation",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "skip",
+              "navigation"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-O-009",
+            "title": "Pointer Gesture Alternatives",
+            "level": "MUST",
+            "platforms": [
+              "all"
+            ],
+            "tags": [
+              "accessibility",
+              "operable",
+              "pointer",
+              "gesture",
+              "alternatives"
+            ]
+          }
+        ]
+      },
+      "perceivable": {
+        "title": "Accessibility: Perceivable",
+        "spec_path": "openspec/specs/accessibility/perceivable/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-A11Y-P-001",
+            "title": "Text Alternatives for Images",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "text",
+              "alternatives",
+              "images"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-002",
+            "title": "Color Contrast — Normal Text",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "color",
+              "contrast",
+              "normal"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-003",
+            "title": "Color Contrast — Large Text",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "color",
+              "contrast",
+              "large"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-004",
+            "title": "Color Contrast — UI Components",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "color",
+              "contrast",
+              "components"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-005",
+            "title": "Color Not as Sole Indicator",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "color",
+              "sole",
+              "indicator"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-006",
+            "title": "Text Resize Support",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "text",
+              "resize",
+              "support"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-007",
+            "title": "Meaningful Sequence",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "meaningful",
+              "sequence"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-008",
+            "title": "Sensory Characteristics",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "sensory",
+              "characteristics"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-009",
+            "title": "Audio and Video Alternatives",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "audio",
+              "video",
+              "alternatives"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-010",
+            "title": "Content Reflow",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "content",
+              "reflow"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-P-011",
+            "title": "Text Spacing Override",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "accessibility",
+              "perceivable",
+              "text",
+              "spacing",
+              "override"
+            ]
+          }
+        ]
+      },
+      "robust": {
+        "title": "Accessibility: Robust",
+        "spec_path": "openspec/specs/accessibility/robust/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-A11Y-R-001",
+            "title": "Semantic HTML Elements",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "all"
+            ],
+            "tags": [
+              "accessibility",
+              "robust",
+              "semantic",
+              "html",
+              "elements"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-R-002",
+            "title": "ARIA Roles and Properties",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "accessibility",
+              "robust",
+              "aria",
+              "roles",
+              "properties"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-R-003",
+            "title": "Status Messages and Live Regions",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "robust",
+              "status",
+              "messages",
+              "live"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-R-004",
+            "title": "Name, Role, Value",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "robust",
+              "name,",
+              "role,",
+              "value"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-R-005",
+            "title": "Valid Markup",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "accessibility",
+              "robust",
+              "valid",
+              "markup"
+            ]
+          }
+        ]
+      },
+      "understandable": {
+        "title": "Accessibility: Understandable",
+        "spec_path": "openspec/specs/accessibility/understandable/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-A11Y-U-001",
+            "title": "Page Language Declaration",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "accessibility",
+              "understandable",
+              "page",
+              "language",
+              "declaration"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-U-002",
+            "title": "Form Input Labels",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "understandable",
+              "form",
+              "input",
+              "labels"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-U-003",
+            "title": "Error Identification and Description",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "understandable",
+              "error",
+              "identification",
+              "description"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-U-004",
+            "title": "Consistent Navigation",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "understandable",
+              "consistent",
+              "navigation"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-U-005",
+            "title": "Consistent Identification",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "understandable",
+              "consistent",
+              "identification"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-U-006",
+            "title": "Predictable Behavior on Input",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "understandable",
+              "predictable",
+              "behavior",
+              "input"
+            ]
+          },
+          {
+            "id": "REQ-A11Y-U-007",
+            "title": "Error Prevention for Important Actions",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "accessibility",
+              "understandable",
+              "error",
+              "prevention",
+              "important"
+            ]
+          }
+        ]
+      }
+    },
+    "components": {
+      "buttons-and-actions": {
+        "title": "Components: Buttons and Actions",
+        "spec_path": "openspec/specs/components/buttons-and-actions/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-BTN-001",
+            "title": "Clear Button Hierarchy",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "buttons and actions",
+              "clear",
+              "button",
+              "hierarchy"
+            ]
+          },
+          {
+            "id": "REQ-BTN-002",
+            "title": "Interactive States",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "buttons and actions",
+              "interactive",
+              "states"
+            ]
+          },
+          {
+            "id": "REQ-BTN-003",
+            "title": "Descriptive Button Labels",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "buttons and actions",
+              "descriptive",
+              "button",
+              "labels"
+            ]
+          },
+          {
+            "id": "REQ-BTN-004",
+            "title": "Adequate Button Size",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "buttons and actions",
+              "adequate",
+              "button",
+              "size"
+            ]
+          },
+          {
+            "id": "REQ-BTN-005",
+            "title": "Button vs. Link Semantics",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "all"
+            ],
+            "tags": [
+              "components",
+              "buttons and actions",
+              "button",
+              "link",
+              "semantics"
+            ]
+          },
+          {
+            "id": "REQ-BTN-006",
+            "title": "Loading and Disabled States",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "buttons and actions",
+              "loading",
+              "disabled",
+              "states"
+            ]
+          }
+        ]
+      },
+      "cards-and-containers": {
+        "title": "Components: Cards and Containers",
+        "spec_path": "openspec/specs/components/cards-and-containers/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-CARD-001",
+            "title": "Consistent Card Styling",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "cards and containers",
+              "consistent",
+              "card",
+              "styling"
+            ]
+          },
+          {
+            "id": "REQ-CARD-002",
+            "title": "Card as Interactive Unit",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "cards and containers",
+              "card",
+              "interactive",
+              "unit"
+            ]
+          },
+          {
+            "id": "REQ-CARD-003",
+            "title": "Content Structure Within Cards",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "cards and containers",
+              "content",
+              "structure",
+              "within"
+            ]
+          },
+          {
+            "id": "REQ-CARD-004",
+            "title": "Container Surface Differentiation",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "cards and containers",
+              "container",
+              "surface",
+              "differentiation"
+            ]
+          }
+        ]
+      },
+      "feedback-and-status": {
+        "title": "Components: Feedback and Status",
+        "spec_path": "openspec/specs/components/feedback-and-status/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-FEED-001",
+            "title": "Immediate Action Acknowledgment",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "feedback and status",
+              "immediate",
+              "action",
+              "acknowledgment"
+            ]
+          },
+          {
+            "id": "REQ-FEED-002",
+            "title": "Loading State Indicators",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "feedback and status",
+              "loading",
+              "state",
+              "indicators"
+            ]
+          },
+          {
+            "id": "REQ-FEED-003",
+            "title": "Success and Error Feedback",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "feedback and status",
+              "success",
+              "error",
+              "feedback"
+            ]
+          },
+          {
+            "id": "REQ-FEED-004",
+            "title": "Toast/Snackbar Behavior",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "feedback and status",
+              "toast/snackbar",
+              "behavior"
+            ]
+          },
+          {
+            "id": "REQ-FEED-005",
+            "title": "Status Badges and Indicators",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "feedback and status",
+              "status",
+              "badges",
+              "indicators"
+            ]
+          }
+        ]
+      },
+      "forms-and-inputs": {
+        "title": "Components: Forms and Inputs",
+        "spec_path": "openspec/specs/components/forms-and-inputs/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-FORM-001",
+            "title": "Visible Labels on All Inputs",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "visible",
+              "labels",
+              "inputs"
+            ]
+          },
+          {
+            "id": "REQ-FORM-002",
+            "title": "Meaningful Error Messages",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "meaningful",
+              "error",
+              "messages"
+            ]
+          },
+          {
+            "id": "REQ-FORM-003",
+            "title": "Input Types and Keyboard Optimization",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "input",
+              "types",
+              "keyboard"
+            ]
+          },
+          {
+            "id": "REQ-FORM-004",
+            "title": "Inline Validation Timing",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "inline",
+              "validation",
+              "timing"
+            ]
+          },
+          {
+            "id": "REQ-FORM-005",
+            "title": "Single-Column Layout",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "single-column",
+              "layout"
+            ]
+          },
+          {
+            "id": "REQ-FORM-006",
+            "title": "Appropriate Field Length",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "appropriate",
+              "field",
+              "length"
+            ]
+          },
+          {
+            "id": "REQ-FORM-007",
+            "title": "Accessible Form Groups",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "accessible",
+              "form",
+              "groups"
+            ]
+          },
+          {
+            "id": "REQ-FORM-008",
+            "title": "Autocomplete Attributes",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "components",
+              "forms and inputs",
+              "autocomplete",
+              "attributes"
+            ]
+          }
+        ]
+      },
+      "lists-and-tables": {
+        "title": "Components: Lists and Tables",
+        "spec_path": "openspec/specs/components/lists-and-tables/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-LIST-001",
+            "title": "Consistent List Item Structure",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "lists and tables",
+              "consistent",
+              "list",
+              "item"
+            ]
+          },
+          {
+            "id": "REQ-LIST-002",
+            "title": "Accessible Table Markup",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "components",
+              "lists and tables",
+              "accessible",
+              "table",
+              "markup"
+            ]
+          },
+          {
+            "id": "REQ-LIST-003",
+            "title": "Responsive Tables",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "components",
+              "lists and tables",
+              "responsive",
+              "tables"
+            ]
+          },
+          {
+            "id": "REQ-LIST-004",
+            "title": "Empty State for Lists",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "lists and tables",
+              "empty",
+              "state",
+              "lists"
+            ]
+          },
+          {
+            "id": "REQ-LIST-005",
+            "title": "Sortable Table Headers",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "lists and tables",
+              "sortable",
+              "table",
+              "headers"
+            ]
+          }
+        ]
+      },
+      "modals-and-overlays": {
+        "title": "Components: Modals and Overlays",
+        "spec_path": "openspec/specs/components/modals-and-overlays/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-MODAL-001",
+            "title": "Focus Management",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "modals and overlays",
+              "focus",
+              "management"
+            ]
+          },
+          {
+            "id": "REQ-MODAL-002",
+            "title": "Dismiss Mechanisms",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "modals and overlays",
+              "dismiss",
+              "mechanisms"
+            ]
+          },
+          {
+            "id": "REQ-MODAL-003",
+            "title": "Background Scrim",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "modals and overlays",
+              "background",
+              "scrim"
+            ]
+          },
+          {
+            "id": "REQ-MODAL-004",
+            "title": "Modal Content Structure",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "modals and overlays",
+              "modal",
+              "content",
+              "structure"
+            ]
+          },
+          {
+            "id": "REQ-MODAL-005",
+            "title": "Avoid Modal Overuse",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "modals and overlays",
+              "avoid",
+              "modal",
+              "overuse"
+            ]
+          },
+          {
+            "id": "REQ-MODAL-006",
+            "title": "Accessible Dialog Markup",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "all"
+            ],
+            "tags": [
+              "components",
+              "modals and overlays",
+              "accessible",
+              "dialog",
+              "markup"
+            ]
+          }
+        ]
+      },
+      "navigation": {
+        "title": "Components: Navigation",
+        "spec_path": "openspec/specs/components/navigation/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-NAV-001",
+            "title": "Clear Current Location",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "navigation",
+              "clear",
+              "current",
+              "location"
+            ]
+          },
+          {
+            "id": "REQ-NAV-002",
+            "title": "Navigation Item Limit",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "navigation",
+              "navigation",
+              "item",
+              "limit"
+            ]
+          },
+          {
+            "id": "REQ-NAV-003",
+            "title": "Navigation Landmark",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "components",
+              "navigation",
+              "navigation",
+              "landmark"
+            ]
+          },
+          {
+            "id": "REQ-NAV-004",
+            "title": "Consistent Placement",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "navigation",
+              "consistent",
+              "placement"
+            ]
+          },
+          {
+            "id": "REQ-NAV-005",
+            "title": "Mobile Navigation Pattern",
+            "level": "SHOULD",
+            "platforms": [
+              "mobile",
+              "cross-platform"
+            ],
+            "tags": [
+              "components",
+              "navigation",
+              "mobile",
+              "navigation",
+              "pattern"
+            ]
+          },
+          {
+            "id": "REQ-NAV-006",
+            "title": "Back Navigation",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "navigation",
+              "back",
+              "navigation"
+            ]
+          }
+        ]
+      }
+    },
+    "foundations": {
+      "color-and-theming": {
+        "title": "Foundations: Color and Theming",
+        "spec_path": "openspec/specs/foundations/color-and-theming/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-COLOR-001",
+            "title": "Systematic Color Palette",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "systematic",
+              "color",
+              "palette"
+            ]
+          },
+          {
+            "id": "REQ-COLOR-002",
+            "title": "Semantic Color Tokens",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "semantic",
+              "color",
+              "tokens"
+            ]
+          },
+          {
+            "id": "REQ-COLOR-003",
+            "title": "Maximum Palette Hues",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "maximum",
+              "palette",
+              "hues"
+            ]
+          },
+          {
+            "id": "REQ-COLOR-004",
+            "title": "Sufficient Contrast for All Themes",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "sufficient",
+              "contrast",
+              "themes"
+            ]
+          },
+          {
+            "id": "REQ-COLOR-005",
+            "title": "Accessible Color Pairs",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "accessible",
+              "color",
+              "pairs"
+            ]
+          },
+          {
+            "id": "REQ-COLOR-006",
+            "title": "Color for Feedback States",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "color",
+              "feedback",
+              "states"
+            ]
+          },
+          {
+            "id": "REQ-COLOR-007",
+            "title": "Opacity and Transparency Usage",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "opacity",
+              "transparency",
+              "usage"
+            ]
+          },
+          {
+            "id": "REQ-COLOR-008",
+            "title": "Brand Color Integration",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color and theming",
+              "brand",
+              "color",
+              "integration"
+            ]
+          }
+        ]
+      },
+      "iconography-and-imagery": {
+        "title": "Foundations: Iconography and Imagery",
+        "spec_path": "openspec/specs/foundations/iconography-and-imagery/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-ICON-001",
+            "title": "Consistent Icon Style",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "iconography and imagery",
+              "consistent",
+              "icon",
+              "style"
+            ]
+          },
+          {
+            "id": "REQ-ICON-002",
+            "title": "Icon Labels for Ambiguous Icons",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "iconography and imagery",
+              "icon",
+              "labels",
+              "ambiguous"
+            ]
+          },
+          {
+            "id": "REQ-ICON-003",
+            "title": "Icon Sizing Consistency",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "iconography and imagery",
+              "icon",
+              "sizing",
+              "consistency"
+            ]
+          },
+          {
+            "id": "REQ-ICON-004",
+            "title": "Accessible Icon Buttons",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "iconography and imagery",
+              "accessible",
+              "icon",
+              "buttons"
+            ]
+          },
+          {
+            "id": "REQ-ICON-005",
+            "title": "Image Optimization",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "foundations",
+              "iconography and imagery",
+              "image",
+              "optimization"
+            ]
+          }
+        ]
+      },
+      "motion-and-animation": {
+        "title": "Foundations: Motion and Animation",
+        "spec_path": "openspec/specs/foundations/motion-and-animation/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-MOTION-001",
+            "title": "Respect Reduced Motion Preferences",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "motion and animation",
+              "respect",
+              "reduced",
+              "motion"
+            ]
+          },
+          {
+            "id": "REQ-MOTION-002",
+            "title": "Appropriate Duration",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "motion and animation",
+              "appropriate",
+              "duration"
+            ]
+          },
+          {
+            "id": "REQ-MOTION-003",
+            "title": "Meaningful Easing",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "motion and animation",
+              "meaningful",
+              "easing"
+            ]
+          },
+          {
+            "id": "REQ-MOTION-004",
+            "title": "Performance-Safe Animations",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "all"
+            ],
+            "tags": [
+              "foundations",
+              "motion and animation",
+              "performance-safe",
+              "animations"
+            ]
+          },
+          {
+            "id": "REQ-MOTION-005",
+            "title": "No Autoplay Continuous Animation",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "motion and animation",
+              "autoplay",
+              "continuous",
+              "animation"
+            ]
+          },
+          {
+            "id": "REQ-MOTION-006",
+            "title": "Transition Continuity",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "motion and animation",
+              "transition",
+              "continuity"
+            ]
+          }
+        ]
+      },
+      "spacing-and-layout": {
+        "title": "Foundations: Spacing and Layout",
+        "spec_path": "openspec/specs/foundations/spacing-and-layout/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-SPACE-001",
+            "title": "Base Spacing Unit",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "base",
+              "spacing",
+              "unit"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-002",
+            "title": "Touch and Click Target Size",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "touch",
+              "click",
+              "target"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-003",
+            "title": "Consistent Spacing Between Related Elements",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "consistent",
+              "spacing",
+              "between"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-004",
+            "title": "Section Separation",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "section",
+              "separation"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-005",
+            "title": "Content Padding from Screen Edges",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "content",
+              "padding",
+              "screen"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-006",
+            "title": "Alignment and Grid Consistency",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "alignment",
+              "grid",
+              "consistency"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-007",
+            "title": "Responsive Spacing Scaling",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "responsive",
+              "spacing",
+              "scaling"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-008",
+            "title": "Whitespace as a Design Element",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "whitespace",
+              "design",
+              "element"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-009",
+            "title": "Consistent Component Internal Spacing",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "consistent",
+              "component",
+              "internal"
+            ]
+          },
+          {
+            "id": "REQ-SPACE-010",
+            "title": "Adequate Spacing Between Interactive Elements",
+            "level": "MUST",
+            "platforms": [
+              "all"
+            ],
+            "tags": [
+              "foundations",
+              "spacing and layout",
+              "adequate",
+              "spacing",
+              "between"
+            ]
+          }
+        ]
+      },
+      "typography": {
+        "title": "Foundations: Typography",
+        "spec_path": "openspec/specs/foundations/typography/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-TYPO-001",
+            "title": "Minimum Body Text Size",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "minimum",
+              "body",
+              "text"
+            ]
+          },
+          {
+            "id": "REQ-TYPO-002",
+            "title": "Type Scale Consistency",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "type",
+              "scale",
+              "consistency"
+            ]
+          },
+          {
+            "id": "REQ-TYPO-003",
+            "title": "Line Height for Body Text",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "line",
+              "height",
+              "body"
+            ]
+          },
+          {
+            "id": "REQ-TYPO-004",
+            "title": "Line Length (Measure)",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "line",
+              "length",
+              "(measure)"
+            ]
+          },
+          {
+            "id": "REQ-TYPO-005",
+            "title": "Font Weight Usage",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "font",
+              "weight",
+              "usage"
+            ]
+          },
+          {
+            "id": "REQ-TYPO-006",
+            "title": "Font Family Limiting",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "font",
+              "family",
+              "limiting"
+            ]
+          },
+          {
+            "id": "REQ-TYPO-007",
+            "title": "Font Loading Performance",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "font",
+              "loading",
+              "performance"
+            ]
+          },
+          {
+            "id": "REQ-TYPO-008",
+            "title": "Heading Hierarchy",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "typography",
+              "heading",
+              "hierarchy"
+            ]
+          }
+        ]
+      },
+      "visual-hierarchy": {
+        "title": "Foundations: Visual Hierarchy",
+        "spec_path": "openspec/specs/foundations/visual-hierarchy/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-HIER-001",
+            "title": "Single Primary Focal Point",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual hierarchy",
+              "single",
+              "primary",
+              "focal"
+            ]
+          },
+          {
+            "id": "REQ-HIER-002",
+            "title": "Primary vs. Secondary Actions",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual hierarchy",
+              "primary",
+              "secondary",
+              "actions"
+            ]
+          },
+          {
+            "id": "REQ-HIER-003",
+            "title": "Content Hierarchy Through Size",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual hierarchy",
+              "content",
+              "hierarchy",
+              "through"
+            ]
+          },
+          {
+            "id": "REQ-HIER-004",
+            "title": "Information Density Appropriateness",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual hierarchy",
+              "information",
+              "density",
+              "appropriateness"
+            ]
+          },
+          {
+            "id": "REQ-HIER-005",
+            "title": "Visual Grouping",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual hierarchy",
+              "visual",
+              "grouping"
+            ]
+          },
+          {
+            "id": "REQ-HIER-006",
+            "title": "Emphasis Restraint",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual hierarchy",
+              "emphasis",
+              "restraint"
+            ]
+          }
+        ]
+      }
+    },
+    "patterns": {
+      "dark-mode": {
+        "title": "Patterns: Dark Mode",
+        "spec_path": "openspec/specs/patterns/dark-mode/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-DARK-001",
+            "title": "Respect System Preference",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "dark mode",
+              "respect",
+              "system",
+              "preference"
+            ]
+          },
+          {
+            "id": "REQ-DARK-002",
+            "title": "Designed Dark Palette (Not Inverted)",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "dark mode",
+              "designed",
+              "dark",
+              "palette"
+            ]
+          },
+          {
+            "id": "REQ-DARK-003",
+            "title": "Dark Mode Contrast Verification",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "dark mode",
+              "dark",
+              "mode",
+              "contrast"
+            ]
+          },
+          {
+            "id": "REQ-DARK-004",
+            "title": "Image and Media Treatment",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "dark mode",
+              "image",
+              "media",
+              "treatment"
+            ]
+          },
+          {
+            "id": "REQ-DARK-005",
+            "title": "Surface Elevation in Dark Mode",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "dark mode",
+              "surface",
+              "elevation",
+              "dark"
+            ]
+          }
+        ]
+      },
+      "error-handling": {
+        "title": "Patterns: Error Handling",
+        "spec_path": "openspec/specs/patterns/error-handling/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-ERR-001",
+            "title": "Human-Readable Error Messages",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "error handling",
+              "human-readable",
+              "error",
+              "messages"
+            ]
+          },
+          {
+            "id": "REQ-ERR-002",
+            "title": "Inline Validation Over Submit-Time Errors",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "error handling",
+              "inline",
+              "validation",
+              "submit-time"
+            ]
+          },
+          {
+            "id": "REQ-ERR-003",
+            "title": "Confirmation for Destructive Actions",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "error handling",
+              "confirmation",
+              "destructive",
+              "actions"
+            ]
+          },
+          {
+            "id": "REQ-ERR-004",
+            "title": "Graceful Degradation",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "error handling",
+              "graceful",
+              "degradation"
+            ]
+          },
+          {
+            "id": "REQ-ERR-005",
+            "title": "404 and Error Pages",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "error handling",
+              "error",
+              "pages"
+            ]
+          }
+        ]
+      },
+      "loading-and-performance": {
+        "title": "Patterns: Loading and Performance",
+        "spec_path": "openspec/specs/patterns/loading-and-performance/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-LOAD-001",
+            "title": "Skeleton Screens for Content Loading",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "loading and performance",
+              "skeleton",
+              "screens",
+              "content"
+            ]
+          },
+          {
+            "id": "REQ-LOAD-002",
+            "title": "Progressive Content Loading",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "loading and performance",
+              "progressive",
+              "content",
+              "loading"
+            ]
+          },
+          {
+            "id": "REQ-LOAD-003",
+            "title": "Optimistic Updates",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "loading and performance",
+              "optimistic",
+              "updates"
+            ]
+          },
+          {
+            "id": "REQ-LOAD-004",
+            "title": "Prevent Layout Shift",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "loading and performance",
+              "prevent",
+              "layout",
+              "shift"
+            ]
+          },
+          {
+            "id": "REQ-LOAD-005",
+            "title": "Error Recovery for Failed Loads",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "loading and performance",
+              "error",
+              "recovery",
+              "failed"
+            ]
+          }
+        ]
+      },
+      "onboarding-and-empty-states": {
+        "title": "Patterns: Onboarding and Empty States",
+        "spec_path": "openspec/specs/patterns/onboarding-and-empty-states/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-ONBOARD-001",
+            "title": "Progressive Disclosure Over Tutorials",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "onboarding and empty states",
+              "progressive",
+              "disclosure",
+              "tutorials"
+            ]
+          },
+          {
+            "id": "REQ-ONBOARD-002",
+            "title": "Meaningful Empty States",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "onboarding and empty states",
+              "meaningful",
+              "empty",
+              "states"
+            ]
+          },
+          {
+            "id": "REQ-ONBOARD-003",
+            "title": "Minimal Signup Friction",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "onboarding and empty states",
+              "minimal",
+              "signup",
+              "friction"
+            ]
+          },
+          {
+            "id": "REQ-ONBOARD-004",
+            "title": "First-Run Experience",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "onboarding and empty states",
+              "first-run",
+              "experience"
+            ]
+          }
+        ]
+      },
+      "responsive-and-adaptive": {
+        "title": "Patterns: Responsive and Adaptive Design",
+        "spec_path": "openspec/specs/patterns/responsive-and-adaptive/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-RESP-001",
+            "title": "Viewport Meta Tag",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "responsive and adaptive",
+              "viewport",
+              "meta"
+            ]
+          },
+          {
+            "id": "REQ-RESP-002",
+            "title": "No Horizontal Scrolling",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "all"
+            ],
+            "tags": [
+              "patterns",
+              "responsive and adaptive",
+              "horizontal",
+              "scrolling"
+            ]
+          },
+          {
+            "id": "REQ-RESP-003",
+            "title": "Responsive Images",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "responsive and adaptive",
+              "responsive",
+              "images"
+            ]
+          },
+          {
+            "id": "REQ-RESP-004",
+            "title": "Breakpoint Consistency",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "responsive and adaptive",
+              "breakpoint",
+              "consistency"
+            ]
+          },
+          {
+            "id": "REQ-RESP-005",
+            "title": "Responsive Typography",
+            "level": "CONSIDER",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "responsive and adaptive",
+              "responsive",
+              "typography"
+            ]
+          },
+          {
+            "id": "REQ-RESP-006",
+            "title": "Adaptive Layout Patterns",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "responsive and adaptive",
+              "adaptive",
+              "layout",
+              "patterns"
+            ]
+          }
+        ]
+      }
+    },
+    "platforms": {
+      "android": {
+        "title": "Platform: Android (Jetpack Compose, Material Design 3)",
+        "spec_path": "openspec/specs/platforms/android/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-ANDROID-001",
+            "title": "Material Theme Integration",
+            "level": "SHOULD",
+            "platforms": [
+              "android"
+            ],
+            "tags": [
+              "platforms",
+              "android",
+              "material",
+              "theme",
+              "integration"
+            ]
+          },
+          {
+            "id": "REQ-ANDROID-002",
+            "title": "Use Material Components",
+            "level": "SHOULD",
+            "platforms": [
+              "android"
+            ],
+            "tags": [
+              "platforms",
+              "android",
+              "material",
+              "components"
+            ]
+          },
+          {
+            "id": "REQ-ANDROID-003",
+            "title": "Bottom Navigation for Top Destinations",
+            "level": "SHOULD",
+            "platforms": [
+              "android"
+            ],
+            "tags": [
+              "platforms",
+              "android",
+              "bottom",
+              "navigation",
+              "destinations"
+            ]
+          },
+          {
+            "id": "REQ-ANDROID-004",
+            "title": "Adaptive Layout with Window Size Classes",
+            "level": "SHOULD",
+            "platforms": [
+              "android"
+            ],
+            "tags": [
+              "platforms",
+              "android",
+              "adaptive",
+              "layout",
+              "window"
+            ]
+          },
+          {
+            "id": "REQ-ANDROID-005",
+            "title": "Edge-to-Edge Design",
+            "level": "SHOULD",
+            "platforms": [
+              "android"
+            ],
+            "tags": [
+              "platforms",
+              "android",
+              "edge-to-edge",
+              "design"
+            ]
+          },
+          {
+            "id": "REQ-ANDROID-006",
+            "title": "Predictive Back Gesture",
+            "level": "SHOULD",
+            "platforms": [
+              "android"
+            ],
+            "tags": [
+              "platforms",
+              "android",
+              "predictive",
+              "back",
+              "gesture"
+            ]
+          }
+        ]
+      },
+      "cross-platform": {
+        "title": "Platform: Cross-Platform (Flutter, React Native)",
+        "spec_path": "openspec/specs/platforms/cross-platform/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-XPLAT-001",
+            "title": "Respect Platform Navigation Patterns",
+            "level": "SHOULD",
+            "platforms": [
+              "flutter",
+              "react native"
+            ],
+            "tags": [
+              "platforms",
+              "cross platform",
+              "respect",
+              "platform",
+              "navigation"
+            ]
+          },
+          {
+            "id": "REQ-XPLAT-002",
+            "title": "Platform-Appropriate Typography",
+            "level": "SHOULD",
+            "platforms": [
+              "flutter",
+              "react native"
+            ],
+            "tags": [
+              "platforms",
+              "cross platform",
+              "platform-appropriate",
+              "typography"
+            ]
+          },
+          {
+            "id": "REQ-XPLAT-003",
+            "title": "Platform-Appropriate Feedback",
+            "level": "SHOULD",
+            "platforms": [
+              "flutter",
+              "react native"
+            ],
+            "tags": [
+              "platforms",
+              "cross platform",
+              "platform-appropriate",
+              "feedback"
+            ]
+          },
+          {
+            "id": "REQ-XPLAT-004",
+            "title": "Consistent Design Tokens Across Platforms",
+            "level": "SHOULD",
+            "platforms": [
+              "flutter",
+              "react native"
+            ],
+            "tags": [
+              "platforms",
+              "cross platform",
+              "consistent",
+              "design",
+              "tokens"
+            ]
+          },
+          {
+            "id": "REQ-XPLAT-005",
+            "title": "Test on Both Platforms",
+            "level": "MUST",
+            "platforms": [
+              "flutter",
+              "react native"
+            ],
+            "tags": [
+              "platforms",
+              "cross platform",
+              "test",
+              "both",
+              "platforms"
+            ]
+          }
+        ]
+      },
+      "desktop": {
+        "title": "Platform: Desktop (Electron, Tauri, WPF, Qt)",
+        "spec_path": "openspec/specs/platforms/desktop/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-PLAT-DESK-001",
+            "title": "Window Management",
+            "level": "MUST",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "window",
+              "management"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-002",
+            "title": "System Menu Integration",
+            "level": "SHOULD",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "system",
+              "menu",
+              "integration"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-003",
+            "title": "Keyboard Shortcuts (Cmd vs. Ctrl)",
+            "level": "MUST",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "keyboard",
+              "shortcuts",
+              "(cmd"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-004",
+            "title": "Drag-and-Drop",
+            "level": "SHOULD",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "drag-and-drop"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-005",
+            "title": "System Tray Integration",
+            "level": "CONSIDER",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "system",
+              "tray",
+              "integration"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-006",
+            "title": "Multi-Window Support",
+            "level": "SHOULD",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "multi-window",
+              "support"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-007",
+            "title": "Native File Dialogs",
+            "level": "MUST",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "native",
+              "file",
+              "dialogs"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-008",
+            "title": "Offline-First Capability",
+            "level": "SHOULD",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "offline-first",
+              "capability"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-009",
+            "title": "High-DPI and Display Scaling",
+            "level": "MUST",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "high-dpi",
+              "display",
+              "scaling"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-DESK-010",
+            "title": "System Theme Integration",
+            "level": "SHOULD",
+            "platforms": [
+              "desktop"
+            ],
+            "tags": [
+              "platforms",
+              "desktop",
+              "system",
+              "theme",
+              "integration"
+            ]
+          }
+        ]
+      },
+      "ios": {
+        "title": "Platform: iOS / macOS (SwiftUI, UIKit)",
+        "spec_path": "openspec/specs/platforms/ios/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-IOS-001",
+            "title": "Use System Components",
+            "level": "SHOULD",
+            "platforms": [
+              "ios",
+              "macos"
+            ],
+            "tags": [
+              "platforms",
+              "ios",
+              "system",
+              "components"
+            ]
+          },
+          {
+            "id": "REQ-IOS-002",
+            "title": "Support Dynamic Type",
+            "level": "MUST",
+            "platforms": [
+              "ios",
+              "macos"
+            ],
+            "tags": [
+              "platforms",
+              "ios",
+              "support",
+              "dynamic",
+              "type"
+            ]
+          },
+          {
+            "id": "REQ-IOS-003",
+            "title": "Tab Bar Navigation (3-5 Tabs)",
+            "level": "SHOULD",
+            "platforms": [
+              "ios"
+            ],
+            "tags": [
+              "platforms",
+              "ios",
+              "navigation",
+              "(3-5",
+              "tabs)"
+            ]
+          },
+          {
+            "id": "REQ-IOS-004",
+            "title": "SF Symbols and System Iconography",
+            "level": "SHOULD",
+            "platforms": [
+              "ios",
+              "macos"
+            ],
+            "tags": [
+              "platforms",
+              "ios",
+              "symbols",
+              "system",
+              "iconography"
+            ]
+          },
+          {
+            "id": "REQ-IOS-005",
+            "title": "Safe Area Compliance",
+            "level": "MUST",
+            "platforms": [
+              "ios"
+            ],
+            "tags": [
+              "platforms",
+              "ios",
+              "safe",
+              "area",
+              "compliance"
+            ]
+          },
+          {
+            "id": "REQ-IOS-006",
+            "title": "Haptic Feedback",
+            "level": "CONSIDER",
+            "platforms": [
+              "ios"
+            ],
+            "tags": [
+              "platforms",
+              "ios",
+              "haptic",
+              "feedback"
+            ]
+          }
+        ]
+      },
+      "tv": {
+        "title": "Platform: TV (tvOS, Android TV, Fire TV)",
+        "spec_path": "openspec/specs/platforms/tv/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-PLAT-TV-001",
+            "title": "10-Foot UI — Large Text and High Contrast",
+            "level": "MUST",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "10-foot",
+              "large",
+              "text"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-TV-002",
+            "title": "D-Pad and Remote Navigation",
+            "level": "MUST",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "d-pad",
+              "remote",
+              "navigation"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-TV-003",
+            "title": "Focus Management and Visual Indicators",
+            "level": "MUST",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "focus",
+              "management",
+              "visual"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-TV-004",
+            "title": "Overscan Safe Area",
+            "level": "MUST",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "overscan",
+              "safe",
+              "area"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-TV-005",
+            "title": "Limited Text Input Handling",
+            "level": "MUST",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "limited",
+              "text",
+              "input"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-TV-006",
+            "title": "Media-First Layouts",
+            "level": "SHOULD",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "media-first",
+              "layouts"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-TV-007",
+            "title": "Voice Input Support",
+            "level": "SHOULD",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "voice",
+              "input",
+              "support"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-TV-008",
+            "title": "Large Touch Targets for Remote Interaction",
+            "level": "MUST",
+            "platforms": [
+              "tvos",
+              "android tv",
+              "fire tv"
+            ],
+            "tags": [
+              "platforms",
+              "tv",
+              "large",
+              "touch",
+              "targets"
+            ]
+          }
+        ]
+      },
+      "wearable": {
+        "title": "Platform: Wearable (watchOS, Wear OS)",
+        "spec_path": "openspec/specs/platforms/wearable/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-PLAT-WEAR-001",
+            "title": "Glanceable Content",
+            "level": "MUST",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "glanceable",
+              "content"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-WEAR-002",
+            "title": "Minimal Interaction Design",
+            "level": "MUST",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "minimal",
+              "interaction",
+              "design"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-WEAR-003",
+            "title": "Crown and Bezel Navigation",
+            "level": "SHOULD",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "crown",
+              "bezel",
+              "navigation"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-WEAR-004",
+            "title": "Complications and Widgets",
+            "level": "SHOULD",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "complications",
+              "widgets"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-WEAR-005",
+            "title": "Small Screen Typography",
+            "level": "MUST",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "small",
+              "screen",
+              "typography"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-WEAR-006",
+            "title": "Haptic Feedback",
+            "level": "SHOULD",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "haptic",
+              "feedback"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-WEAR-007",
+            "title": "Health Data Privacy",
+            "level": "MUST",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "health",
+              "data",
+              "privacy"
+            ]
+          },
+          {
+            "id": "REQ-PLAT-WEAR-008",
+            "title": "Battery-Conscious Animations",
+            "level": "MUST",
+            "platforms": [
+              "watchos",
+              "wear os"
+            ],
+            "tags": [
+              "platforms",
+              "wearable",
+              "battery-conscious",
+              "animations"
+            ]
+          }
+        ]
+      },
+      "web": {
+        "title": "Platform: Web (HTML/CSS/JavaScript)",
+        "spec_path": "openspec/specs/platforms/web/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-WEB-001",
+            "title": "Semantic HTML Structure",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "platforms",
+              "web",
+              "semantic",
+              "html",
+              "structure"
+            ]
+          },
+          {
+            "id": "REQ-WEB-002",
+            "title": "CSS Custom Properties for Theming",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "platforms",
+              "web",
+              "custom",
+              "properties",
+              "theming"
+            ]
+          },
+          {
+            "id": "REQ-WEB-003",
+            "title": "Modern CSS Layout",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "platforms",
+              "web",
+              "modern",
+              "layout"
+            ]
+          },
+          {
+            "id": "REQ-WEB-004",
+            "title": "Focus-Visible for Keyboard Users",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "platforms",
+              "web",
+              "focus-visible",
+              "keyboard",
+              "users"
+            ]
+          },
+          {
+            "id": "REQ-WEB-005",
+            "title": "CSS Specificity Management",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "platforms",
+              "web",
+              "specificity",
+              "management"
+            ]
+          },
+          {
+            "id": "REQ-WEB-006",
+            "title": "Performance Budget",
+            "level": "CONSIDER",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "platforms",
+              "web",
+              "performance",
+              "budget"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "stats": {
+    "total_requirements": 189,
+    "by_level": {
+      "MUST": 89,
+      "SHOULD": 81,
+      "CONSIDER": 19
+    },
+    "by_category": {
+      "accessibility": 32,
+      "components": 40,
+      "foundations": 43,
+      "patterns": 25,
+      "platforms": 49
+    }
+  }
+}

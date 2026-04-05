@@ -1,0 +1,65 @@
+# Spec Validation CI
+# Badge: [![Spec Validation](https://github.com/makhage/openuiguide/actions/workflows/validate-specs.yml/badge.svg)](https://github.com/makhage/openuiguide/actions/workflows/validate-specs.yml)
+
+name: Validate Specs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'openspec/**'
+      - 'scripts/**'
+  pull_request:
+    paths:
+      - 'openspec/**'
+      - 'scripts/**'
+
+jobs:
+  validate-bash:
+    name: Validate Specs (Bash)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Make validator executable
+        run: chmod +x scripts/validate-specs.sh
+
+      - name: Run bash validator
+        run: ./scripts/validate-specs.sh
+
+  validate-node:
+    name: Validate Specs (Node.js)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Node.js validator
+        run: node scripts/validate-spec-format.js
+
+  verify-specs-json:
+    name: Verify specs.json is up-to-date
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate specs.json
+        run: node scripts/generate-specs-json.js
+
+      - name: Check for differences
+        run: |
+          if git diff --exit-code openspec/specs.json; then
+            echo "specs.json is up-to-date"
+          else
+            echo "::error::specs.json is out of date. Run 'node scripts/generate-specs-json.js' and commit the result."
+            exit 1
+          fi

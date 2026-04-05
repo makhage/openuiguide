@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme Analytics Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ISSUE: No skip navigation link -->
+  <!-- ISSUE: No landmark roles on major sections -->
+
+  <div class="sidebar">
+    <img src="logo.png" class="logo"> <!-- ISSUE: Missing alt text -->
+    <div class="nav-links">
+      <!-- ISSUE: Small touch targets, no focus styles -->
+      <a href="#" class="nav-item active">Dashboard</a>
+      <a href="#" class="nav-item">Reports</a>
+      <a href="#" class="nav-item">Users</a>
+      <a href="#" class="nav-item">Settings</a>
+      <a href="#" class="nav-item">Billing</a>
+    </div>
+    <div class="sidebar-footer">
+      <!-- ISSUE: Low contrast text -->
+      <span style="color: #aaa; font-size: 11px;">v2.4.1 — Last sync 3m ago</span>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <div>
+        <h1 style="font-size: 28px; margin: 0;">Dashboard</h1>
+        <!-- ISSUE: Low contrast light gray on white -->
+        <p style="color: #bbb; margin: 5px 0 0 0; font-size: 13px;">Welcome back, Jamie. Here is what happened while you were away. This summary covers the last 7 days of activity across all your connected data sources and integrations, including third-party analytics providers.</p>
+      </div>
+      <div class="header-actions">
+        <!-- ISSUE: img without alt, small button -->
+        <button class="icon-btn" style="padding: 4px;"><img src="bell.svg" width="16"></button>
+        <button class="icon-btn" style="padding: 4px;"><img src="settings.svg" width="16"></button>
+        <img src="avatar.jpg" class="avatar"> <!-- ISSUE: Missing alt -->
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card" style="padding: 18px;"> <!-- ISSUE: Inconsistent spacing (not 8pt grid) -->
+        <div class="card-label">Total Revenue</div>
+        <div class="card-value">$48,239</div>
+        <span style="color: green; font-size: 11px;">+12.5% vs last week</span>
+      </div>
+      <div class="card" style="padding: 22px;"> <!-- ISSUE: Inconsistent spacing -->
+        <div class="card-label">Active Users</div>
+        <div class="card-value">1,842</div>
+        <span style="color: red; font-size: 11px;">-3.1% vs last week</span>
+      </div>
+      <div class="card" style="padding: 15px;"> <!-- ISSUE: Inconsistent spacing -->
+        <div class="card-label">Conversion Rate</div>
+        <div class="card-value">3.24%</div>
+        <span style="color: green; font-size: 11px;">+0.8% vs last week</span>
+      </div>
+      <div class="card" style="padding: 20px;"> <!-- ISSUE: Inconsistent spacing -->
+        <div class="card-label">Avg. Session</div>
+        <div class="card-value">4m 12s</div>
+        <span style="color: #999; font-size: 11px;">No change</span>
+      </div>
+    </div>
+
+    <!-- ISSUE: No loading states for async data -->
+    <div class="table-section">
+      <h2 style="font-size: 18px; margin-bottom: 10px;">Recent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#TXN-4821</td>
+            <td>Sarah Connor</td>
+            <td>$240.00</td>
+            <!-- ISSUE: Status communicated only by color -->
+            <td><span style="color: green;">Completed</span></td>
+            <td>Apr 4, 2026</td>
+            <td><a href="#" style="font-size: 11px; padding: 2px 6px;">View</a></td> <!-- ISSUE: Small touch target -->
+          </tr>
+          <tr>
+            <td>#TXN-4820</td>
+            <td>John Reese</td>
+            <td>$89.50</td>
+            <td><span style="color: orange;">Pending</span></td>
+            <td>Apr 3, 2026</td>
+            <td><a href="#" style="font-size: 11px; padding: 2px 6px;">View</a></td>
+          </tr>
+          <tr>
+            <td>#TXN-4819</td>
+            <td>Root Admin</td>
+            <td>$1,200.00</td>
+            <td><span style="color: red;">Failed</span></td>
+            <td>Apr 3, 2026</td>
+            <td><a href="#" style="font-size: 11px; padding: 2px 6px;">View</a></td>
+          </tr>
+          <tr>
+            <td>#TXN-4818</td>
+            <td>Sameen Shaw</td>
+            <td>$67.00</td>
+            <td><span style="color: green;">Completed</span></td>
+            <td>Apr 2, 2026</td>
+            <td><a href="#" style="font-size: 11px; padding: 2px 6px;">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="form-section">
+      <h2 style="font-size: 18px; margin-bottom: 12px;">Quick Transfer</h2>
+      <form>
+        <!-- ISSUE: No visible labels, no error states, no required indicators -->
+        <div class="form-row">
+          <input type="text" placeholder="Recipient email" style="padding: 6px 10px;">
+          <input type="number" placeholder="Amount ($)" style="padding: 6px 10px; width: 100px;">
+          <select style="padding: 6px 10px;">
+            <option>USD</option>
+            <option>EUR</option>
+            <option>GBP</option>
+          </select>
+          <button type="submit" class="btn-primary" style="padding: 6px 14px; font-size: 13px;">Send</button>
+        </div>
+        <div style="margin-top: 7px;"> <!-- ISSUE: Inconsistent spacing -->
+          <label style="font-size: 12px; color: #aaa;">
+            <input type="checkbox"> I confirm this transfer
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="footer" style="margin-top: 30px; padding: 10px 0; border-top: 1px solid #eee;">
+      <!-- ISSUE: Low contrast, tiny text -->
+      <span style="color: #ccc; font-size: 10px;">© 2026 Acme Inc. All rights reserved. Terms of Service · Privacy Policy · Contact Support</span>
+    </div>
+  </div>
+</body>
+</html>
