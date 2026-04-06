@@ -65,8 +65,9 @@ Use **AskUserQuestion** to let the user choose their review scope:
 1. **Full Review** — Check everything (accessibility, foundations, components, patterns, platform) *(Recommended)*
 2. **Accessibility Audit** — Focus only on WCAG 2.2 compliance (MUST violations)
 3. **Visual Design Review** — Focus on typography, color, spacing, hierarchy, and motion
-4. **Component Review** — Focus on buttons, forms, navigation, cards, modals, lists, feedback
-5. **Custom** — Pick specific categories to check
+4. **Visual Polish** — Deep analysis of text overlap, color harmony, and spacing optimization
+5. **Component Review** — Focus on buttons, forms, navigation, cards, modals, lists, feedback
+6. **Custom** — Pick specific categories to check
 
 If the user chose **Custom**, ask a follow-up:
 
@@ -75,9 +76,10 @@ If the user chose **Custom**, ask a follow-up:
 **Options (multi-select by listing numbers):**
 1. Accessibility (WCAG 2.2)
 2. Foundations (spacing, typography, color, hierarchy, icons, motion)
-3. Components (buttons, forms, navigation, cards, modals, lists, feedback)
-4. Patterns (responsive, dark mode, loading, onboarding, errors)
-5. Platform-specific ([detected platform] conventions)
+3. Visual Polish (text overflow, color harmony, spacing optimization)
+4. Components (buttons, forms, navigation, cards, modals, lists, feedback)
+5. Patterns (responsive, dark mode, loading, onboarding, errors)
+6. Platform-specific ([detected platform] conventions)
 
 ### 1d. Output Preference
 
@@ -105,8 +107,11 @@ Based on the chosen scope, load the relevant spec files from `openspec/specs/`.
 
 ### Load for Full / Visual / Foundations:
 - `openspec/specs/foundations/spacing-and-layout/spec.md`
+- `openspec/specs/foundations/spacing-optimization/spec.md`
 - `openspec/specs/foundations/typography/spec.md`
+- `openspec/specs/foundations/text-overflow-and-clipping/spec.md`
 - `openspec/specs/foundations/color-and-theming/spec.md`
+- `openspec/specs/foundations/color-harmony/spec.md`
 - `openspec/specs/foundations/visual-hierarchy/spec.md`
 - `openspec/specs/foundations/iconography-and-imagery/spec.md`
 - `openspec/specs/foundations/motion-and-animation/spec.md`
@@ -169,7 +174,52 @@ Read each file and evaluate against loaded specs. For each requirement:
 2. Determine the enforcement level (MUST/SHOULD/CONSIDER)
 3. If violated, record: file, line(s), requirement ID, specific issue, estimated fix effort
 
-### 3c. Group Cross-File Findings
+### 3c. Visual Rendering Analysis
+
+In addition to structural checks, perform these visual-level analyses on CSS/style files:
+
+**Text Overlap Detection:**
+- Find elements with fixed `height`/`max-height` containing text but no `overflow` strategy
+- Find `white-space: nowrap` without `text-overflow: ellipsis`
+- Find `position: absolute/fixed` on text without explicit bounds
+- Find negative margins near text elements
+- Flag `-webkit-line-clamp` without a way to access full text (title, aria-label, expand button)
+
+**Color Scheme Analysis:**
+- Extract ALL unique color values (hex, rgb, hsl, named, CSS variables) from all CSS
+- Count total unique colors — flag if > 15 (indicates missing design system)
+- Check for pure `#000` on `#fff` — suggest softer alternatives
+- Identify the accent/brand colors and check if they're also used for error/danger states (dual-purpose)
+- Check for highly saturated colors (> 80% HSL saturation) used on large surface areas
+- Look for near-complementary text/background pairs with high saturation (vibrating colors)
+- Verify colors used for different states/categories are perceptibly distinct (>= 30deg hue difference)
+
+**Spacing Optimization Analysis:**
+- Extract all margin/padding values across the project — check if they follow a consistent scale
+- Measure spacing between form labels and their inputs (should be 4-8px)
+- Measure spacing between consecutive form fields (should be 16-24px)
+- Check card/container padding for balance (all sides roughly proportional)
+- Check if spacing decreases in media queries for mobile viewports
+- Compare intra-group spacing vs. inter-group spacing (related elements should be closer)
+- Flag spacing values that don't fit the base grid (if one is used)
+
+Present the color analysis as a dedicated section in the report:
+
+```
+  Color Palette Analysis
+  ──────────────────────
+  Unique colors found: 23 (recommended: 12-15)
+  Accent colors: 3 (recommended: 1-2)
+  
+  Issues:
+  - #ff4d6a used for both brand accent AND error states
+  - #5a5e70 text on #0f1117 background: 2.2:1 contrast (need 4.5:1)
+  - Pure #000000 found — consider off-black for softer readability
+  
+  Palette health: Needs work
+```
+
+### 3d. Group Cross-File Findings
 
 If the same violation appears in multiple files (e.g., "missing skip nav on all pages"), **combine them into a single finding** with a file list rather than repeating the finding N times.
 
@@ -485,6 +535,8 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --score` | Quick scan, show score dashboard only |
 | `/design-review --spec accessibility` | Accessibility audit only |
 | `/design-review --spec visual` | Visual design review only |
+| `/design-review --spec visual-polish` | Text overlap + color harmony + spacing optimization |
+| `/design-review --spec colors` | Color scheme analysis (harmony, saturation, dual-purpose) |
 | `/design-review --spec components` | Component review only |
 | `/design-review --save` | Full review + save to `design-review.md` |
 | `/design-review --summary` | Score + top 5 issues only |
