@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-04-05",
+  "generated": "2026-04-06",
   "categories": {
     "accessibility": {
       "operable": {
@@ -1579,6 +1579,172 @@
           }
         ]
       },
+      "color-harmony": {
+        "title": "Foundations: Color Harmony",
+        "spec_path": "openspec/specs/foundations/color-harmony/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-HARMONY-001",
+            "title": "Avoid Pure Black on Pure White",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "avoid",
+              "pure",
+              "black"
+            ]
+          },
+          {
+            "id": "REQ-HARMONY-002",
+            "title": "Limit Total Unique Colors",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "limit",
+              "total",
+              "unique"
+            ]
+          },
+          {
+            "id": "REQ-HARMONY-003",
+            "title": "Avoid Vibrating Color Combinations",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "avoid",
+              "vibrating",
+              "color"
+            ]
+          },
+          {
+            "id": "REQ-HARMONY-004",
+            "title": "Consistent Color Temperature",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "consistent",
+              "color",
+              "temperature"
+            ]
+          },
+          {
+            "id": "REQ-HARMONY-005",
+            "title": "Limit Accent Color Count",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "limit",
+              "accent",
+              "color"
+            ]
+          },
+          {
+            "id": "REQ-HARMONY-006",
+            "title": "Avoid Oversaturated Large Surfaces",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "avoid",
+              "oversaturated",
+              "large"
+            ]
+          },
+          {
+            "id": "REQ-HARMONY-007",
+            "title": "Sufficient Color Differentiation",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "sufficient",
+              "color",
+              "differentiation"
+            ]
+          },
+          {
+            "id": "REQ-HARMONY-008",
+            "title": "Dual-Purpose Color Avoidance",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "color harmony",
+              "dual-purpose",
+              "color",
+              "avoidance"
+            ]
+          }
+        ]
+      },
       "iconography-and-imagery": {
         "title": "Foundations: Iconography and Imagery",
         "spec_path": "openspec/specs/foundations/iconography-and-imagery/spec.md",
@@ -1990,6 +2156,359 @@
               "adequate",
               "spacing",
               "between"
+            ]
+          }
+        ]
+      },
+      "spacing-optimization": {
+        "title": "Spacing Optimization",
+        "spec_path": "openspec/specs/foundations/spacing-optimization/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-SOPT-001",
+            "title": "Vertical Rhythm",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "vertical",
+              "rhythm"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-002",
+            "title": "Proximity Grouping — Related vs. Unrelated",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "proximity",
+              "grouping",
+              "related"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-003",
+            "title": "Card Internal Padding Consistency",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "card",
+              "internal",
+              "padding"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-004",
+            "title": "Spacing Between Form Fields",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "spacing",
+              "between",
+              "form"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-005",
+            "title": "List Item Separation",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "list",
+              "item",
+              "separation"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-006",
+            "title": "Button Group Spacing",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "button",
+              "group",
+              "spacing"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-007",
+            "title": "Section Breathing Room",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "section",
+              "breathing",
+              "room"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-008",
+            "title": "First and Last Child Padding",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "first",
+              "last",
+              "child"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-009",
+            "title": "Responsive Spacing Reduction",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "responsive",
+              "spacing",
+              "reduction"
+            ]
+          },
+          {
+            "id": "REQ-SOPT-010",
+            "title": "Content Density Matching",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "spacing optimization",
+              "content",
+              "density",
+              "matching"
+            ]
+          }
+        ]
+      },
+      "text-overflow-and-clipping": {
+        "title": "Foundations: Text Overflow and Clipping",
+        "spec_path": "openspec/specs/foundations/text-overflow-and-clipping/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-TEXT-001",
+            "title": "Overflow Handling on Fixed-Height Text Containers",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "overflow",
+              "handling",
+              "fixed-height"
+            ]
+          },
+          {
+            "id": "REQ-TEXT-002",
+            "title": "Text Truncation with Ellipsis",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "swiftui",
+              "compose",
+              "react native"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "text",
+              "truncation",
+              "ellipsis"
+            ]
+          },
+          {
+            "id": "REQ-TEXT-003",
+            "title": "Line Clamping with Access to Full Text",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "swiftui",
+              "compose",
+              "react native"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "line",
+              "clamping",
+              "access"
+            ]
+          },
+          {
+            "id": "REQ-TEXT-004",
+            "title": "Avoid Fixed Width on Dynamic Text Containers",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "avoid",
+              "fixed",
+              "width"
+            ]
+          },
+          {
+            "id": "REQ-TEXT-005",
+            "title": "Absolute/Fixed Positioning Text Overlap Prevention",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "swiftui",
+              "compose",
+              "react native"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "absolute/fixed",
+              "positioning",
+              "text"
+            ]
+          },
+          {
+            "id": "REQ-TEXT-006",
+            "title": "Z-Index Stacking Order",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "swiftui",
+              "compose",
+              "react native"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "z-index",
+              "stacking",
+              "order"
+            ]
+          },
+          {
+            "id": "REQ-TEXT-007",
+            "title": "Negative Margins on Text Elements",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "react native"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "negative",
+              "margins",
+              "text"
+            ]
+          },
+          {
+            "id": "REQ-TEXT-008",
+            "title": "Responsive Text Container Sizing",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "swiftui",
+              "compose",
+              "react native"
+            ],
+            "tags": [
+              "foundations",
+              "text overflow and clipping",
+              "responsive",
+              "text",
+              "container"
             ]
           }
         ]
@@ -3563,16 +4082,16 @@
     }
   },
   "stats": {
-    "total_requirements": 189,
+    "total_requirements": 215,
     "by_level": {
-      "MUST": 89,
-      "SHOULD": 81,
-      "CONSIDER": 19
+      "MUST": 94,
+      "SHOULD": 101,
+      "CONSIDER": 20
     },
     "by_category": {
       "accessibility": 32,
       "components": 40,
-      "foundations": 43,
+      "foundations": 69,
       "patterns": 25,
       "platforms": 49
     }
