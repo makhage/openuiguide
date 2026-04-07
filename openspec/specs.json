@@ -4999,6 +4999,200 @@
           }
         ]
       },
+      "security-and-trust": {
+        "title": "Security & Trust UX",
+        "spec_path": "openspec/specs/patterns/security-and-trust/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-SEC-001",
+            "title": "Password Field Masking with Toggle",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "password",
+              "field",
+              "masking"
+            ]
+          },
+          {
+            "id": "REQ-SEC-002",
+            "title": "Sensitive Data Masking in UI",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "sensitive",
+              "data",
+              "masking"
+            ]
+          },
+          {
+            "id": "REQ-SEC-003",
+            "title": "Secure Form Submission Indicators",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "secure",
+              "form",
+              "submission"
+            ]
+          },
+          {
+            "id": "REQ-SEC-004",
+            "title": "Session Timeout Warning",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "session",
+              "timeout",
+              "warning"
+            ]
+          },
+          {
+            "id": "REQ-SEC-005",
+            "title": "Auth Error Messages — No Information Leakage",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "auth",
+              "error",
+              "messages"
+            ]
+          },
+          {
+            "id": "REQ-SEC-006",
+            "title": "Clear Permission Requests",
+            "level": "SHOULD",
+            "platforms": [
+              "mobile"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "clear",
+              "permission",
+              "requests"
+            ]
+          },
+          {
+            "id": "REQ-SEC-007",
+            "title": "Privacy-Respecting Defaults",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "privacy-respecting",
+              "defaults"
+            ]
+          },
+          {
+            "id": "REQ-SEC-008",
+            "title": "Logout Accessibility and Visibility",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "logout",
+              "accessibility",
+              "visibility"
+            ]
+          },
+          {
+            "id": "REQ-SEC-009",
+            "title": "Two-Factor Authentication UX",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "two-factor",
+              "authentication"
+            ]
+          },
+          {
+            "id": "REQ-SEC-010",
+            "title": "Data Deletion Confirmation and Feedback",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "security and trust",
+              "data",
+              "deletion",
+              "confirmation"
+            ]
+          }
+        ]
+      },
       "touch-gestures": {
         "title": "Touch Gestures",
         "spec_path": "openspec/specs/patterns/touch-gestures/spec.md",
@@ -6096,17 +6290,17 @@
     }
   },
   "stats": {
-    "total_requirements": 319,
+    "total_requirements": 329,
     "by_level": {
-      "MUST": 114,
-      "SHOULD": 177,
+      "MUST": 117,
+      "SHOULD": 184,
       "CONSIDER": 28
     },
     "by_category": {
       "accessibility": 32,
       "components": 58,
       "foundations": 87,
-      "patterns": 93,
+      "patterns": 103,
       "platforms": 49
     }
   }
