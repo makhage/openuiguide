@@ -32,7 +32,9 @@ Display this header immediately:
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   OpenUI Guide — Design Review
-  v1.0.0 | 189 requirements across 29 spec categories
+  Your AI design team, on demand.
+  
+  v1.0.0 | 275 requirements | 39 categories | 7 platforms
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -55,7 +57,60 @@ Present the detection results:
   UI Files:   [count] files found
 ```
 
-### 1c. Interactive Scope Selection
+### 1c. Design Discovery Interview
+
+Before reviewing, conduct a brief **design intake interview** — like a design agency's discovery call. This context shapes how strictly rules are applied and which findings matter most. Use **AskUserQuestion** for each question.
+
+**Question 1:** "What type of product is this?"
+
+**Options:**
+1. **SaaS / Web App** — Dashboard, tool, or productivity app (data-dense, efficiency-focused)
+2. **Marketing / Landing Page** — Conversion-focused, brand-forward, visual impact
+3. **E-Commerce** — Product listings, checkout, trust signals
+4. **Content / Blog / Docs** — Reading-focused, long-form, information architecture
+5. **Internal / Admin Tool** — Functional, data-heavy, power-user focused
+
+**Question 2:** "Who is your primary audience?"
+
+**Options:**
+1. **General consumers** — Broad audience, accessibility critical, mobile-first
+2. **Business professionals** — Desktop-heavy, data-dense is OK, efficiency matters
+3. **Developers / Technical users** — Comfortable with density, keyboard shortcuts valued
+4. **Enterprise / Regulated** — Compliance matters, accessibility non-negotiable, conservative design
+
+**Question 3:** "What's your design priority right now?"
+
+**Options:**
+1. **Make it accessible** — WCAG compliance is the goal *(loads accessibility-focused review)*
+2. **Make it look professional** — Visual polish, consistency, spacing, color harmony
+3. **Improve conversion** — CTA effectiveness, user flow, persuasive design
+4. **Full audit** — Check everything, give me the complete picture *(Recommended)*
+
+**Question 4:** "What's the visual personality you're going for?"
+
+**Options:**
+1. **Clean & Minimal** — Apple-inspired, lots of whitespace, understated
+2. **Bold & Energetic** — Bright colors, strong CTAs, dynamic
+3. **Dark & Technical** — Dark theme, data-focused, developer aesthetic
+4. **Warm & Friendly** — Rounded corners, soft colors, approachable
+5. **Not sure yet** — Review against general best practices
+
+**How these answers shape the review:**
+
+| Answer | Effect on Review |
+|--------|-----------------|
+| SaaS/Admin/Technical audience | Tighter spacing (REQ-SOPT-010) is acceptable, don't flag density |
+| Marketing/E-Commerce | CTA specs (REQ-CTA-*) weighted higher, conversion patterns prioritized |
+| Content/Blog | Typography specs (REQ-TYPO-*) weighted higher, line length/readability critical |
+| "Make it accessible" | Skip visual polish suggestions, focus 100% on MUST violations |
+| "Make it look professional" | Color harmony, spacing optimization, visual consistency weighted higher |
+| "Improve conversion" | CTA analysis, UX writing, loading performance weighted higher |
+| Dark & Technical personality | Don't flag dark-only theme (REQ-DARK-001 adjusted), accept higher density |
+| Clean & Minimal | Flag excessive decoration, expect generous whitespace |
+
+Store these answers and reference them throughout the review. When a finding might conflict with the stated design goals, acknowledge it: *"This would normally be a warning, but given your data-dense dashboard audience, tighter spacing is appropriate here."*
+
+### 1d. Review Scope Selection
 
 Use **AskUserQuestion** to let the user choose their review scope:
 
@@ -81,7 +136,7 @@ If the user chose **Custom**, ask a follow-up:
 5. Patterns (responsive, dark mode, loading, onboarding, errors)
 6. Platform-specific ([detected platform] conventions)
 
-### 1d. Output Preference
+### 1e. Output Preference
 
 Use **AskUserQuestion** to ask about output format:
 
@@ -280,119 +335,302 @@ Also compute per-category scores using the same formula:
 
 ## Phase 5: Present Results
 
-### 5a. Score Dashboard
+### 5a. Score Dashboard with Visual Meter
 
-Display the score prominently:
+Display the score prominently with a visual bar:
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Design Review Results
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  Overall Score: 62/100 (D — Significant Issues)
+  Overall Score
+
+  62/100  [████████████░░░░░░░░]  D — Significant Issues
 
   Category Breakdown:
-  ┌─────────────────────┬───────┬───────┐
-  │ Category            │ Score │ Grade │
-  ├─────────────────────┼───────┼───────┤
-  │ Accessibility       │ 45    │ F     │
-  │ Foundations          │ 72    │ C     │
-  │ Components           │ 68    │ D     │
-  │ Patterns             │ 70    │ C     │
-  │ Platform (Web)       │ 80    │ B     │
-  └─────────────────────┴───────┴───────┘
+  ┌─────────────────────┬───────┬────────────────────────┬───────┐
+  │ Category            │ Score │ Meter                  │ Grade │
+  ├─────────────────────┼───────┼────────────────────────┼───────┤
+  │ Accessibility       │ 45    │ ████████░░░░░░░░░░░░   │ F     │
+  │ Foundations          │ 72    │ ██████████████░░░░░░   │ C     │
+  │ Components           │ 68    │ █████████████░░░░░░░   │ D     │
+  │ Patterns             │ 70    │ ██████████████░░░░░░   │ C     │
+  │ Platform (Web)       │ 80    │ ████████████████░░░░   │ B     │
+  └─────────────────────┴───────┴────────────────────────┴───────┘
 
-  Findings: 14 errors | 12 warnings | 5 suggestions
-
-  Estimated Total Fix Time: ~3-4 hours
-  Quick Wins (< 5 min each): 8 findings
+  14 errors | 12 warnings | 5 suggestions
+  Estimated fix time: ~3-4 hours
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### 5b. Priority Matrix
+### 5b. Quick Win Sprint
 
-Before listing findings, show a priority guide:
-
-```
-  Fix Priority
-  ────────────
-  Priority 1 — High Impact, Quick Fix (do these first)
-  Priority 2 — High Impact, Moderate Effort
-  Priority 3 — Medium Impact, Quick Fix
-  Priority 4 — Medium Impact, Moderate Effort
-  Priority 5 — Low Impact / Involved Effort
-```
-
-Assign each finding a priority (1-5) based on:
-- **Impact:** MUST = High, SHOULD = Medium, CONSIDER = Low
-- **Effort:** Quick fix = low effort, Moderate = medium, Involved = high effort
-- Priority matrix: High Impact + Quick = P1, High + Moderate = P2, Medium + Quick = P3, Medium + Moderate = P4, Low or Involved = P5
-
-### 5c. Findings by Priority
-
-Present findings grouped by priority, not just by enforcement level:
+Immediately after the score dashboard, show a **"Quick Win Sprint"** — the top 5-8 fixes that give the most score improvement for the least effort. This is the highest-impact section of the entire review.
 
 ```
 ──────────────────────────────────────────────
-  Priority 1 — High Impact, Quick Fix (8 findings)
+  Quick Win Sprint — 15 minutes to jump from 62 to 78
+──────────────────────────────────────────────
+  Do these 6 fixes and gain +16 points:
+
+  Fix 1 (+3 pts, ~2 min) REQ-TYPO-001: Body text size
+  ┌─ style.css:24 ─────────────────────────────────────┐
+  │ BEFORE:  font-size: 14px;                          │
+  │ AFTER:   font-size: 16px;                          │
+  └────────────────────────────────────────────────────┘
+
+  Fix 2 (+3 pts, ~2 min) REQ-A11Y-O-008: Skip navigation
+  ┌─ All HTML files ───────────────────────────────────┐
+  │ ADD as first child of <body>:                      │
+  │                                                    │
+  │   <a href="#main" class="skip-link">               │
+  │     Skip to main content                           │
+  │   </a>                                             │
+  └────────────────────────────────────────────────────┘
+
+  Fix 3 (+3 pts, ~1 min) REQ-A11Y-P-002: Muted text contrast
+  ┌─ style.css:8 ──────────────────────────────────────┐
+  │ BEFORE:  --text-muted: #5a5e70;  /* 2.2:1 ratio */│
+  │ AFTER:   --text-muted: #9399ad;  /* 4.7:1 ratio */│
+  └────────────────────────────────────────────────────┘
+
+  Fix 4 (+2 pts, ~3 min) REQ-WEB-001: Semantic landmarks
+  ┌─ All HTML files ───────────────────────────────────┐
+  │ BEFORE:  <div class="container">                   │
+  │ AFTER:   <main id="main" class="container">        │
+  │                                                    │
+  │ BEFORE:  <div class="nav-bar">                     │
+  │ AFTER:   <header><nav class="nav-bar">             │
+  └────────────────────────────────────────────────────┘
+
+  Fix 5 (+3 pts, ~3 min) REQ-MOTION-001: Reduced motion
+  ┌─ style.css (add at end) ───────────────────────────┐
+  │ ADD:                                               │
+  │                                                    │
+  │   @media (prefers-reduced-motion: reduce) {        │
+  │     *, *::before, *::after {                       │
+  │       transition-duration: 0.01ms !important;      │
+  │       animation-duration: 0.01ms !important;       │
+  │     }                                              │
+  │   }                                                │
+  └────────────────────────────────────────────────────┘
+
+  Fix 6 (+2 pts, ~4 min) REQ-FORM-001: Form labels
+  ┌─ index.html:20 ────────────────────────────────────┐
+  │ BEFORE:  <input placeholder="Search...">           │
+  │ AFTER:   <label for="search" class="sr-only">      │
+  │            Search                                  │
+  │          </label>                                  │
+  │          <input id="search" placeholder="Search...">│
+  └────────────────────────────────────────────────────┘
+
+  ─────────────────────
+  Sprint total: +16 points in ~15 minutes
+  Score after sprint: 62 → 78 (D → C+)
+  ─────────────────────
+```
+
+**CRITICAL:** Every finding MUST include a before/after code box like the examples above. This is what makes the review actionable. Never just describe a fix in prose — show the exact code change.
+
+### 5c. Color Palette Analysis (if applicable)
+
+If the project has CSS with color values, show a visual palette summary:
+
+```
+──────────────────────────────────────────────
+  Color Palette Analysis
 ──────────────────────────────────────────────
 
-  1. REQ-A11Y-O-008: Skip Navigation
-     Files: All 6 HTML pages
-     Issue: No "Skip to main content" link
-     Fix: Add <a href="#main" class="skip-link">Skip to main content</a>
-     Effort: Quick fix (< 5 min)
+  Extracted 23 unique colors (recommended: 12-15)
 
-  2. REQ-TYPO-001: Minimum Body Text Size
-     File: style.css:24
-     Issue: Body font-size is 14px, below MUST minimum of 16px
-     Fix: Change font-size: 14px to font-size: 16px
-     Effort: Quick fix (< 5 min)
+  Backgrounds:   #0f1117  #1a1d27  #252830  #2a2d35
+  Text:          #ffffff  #e0e0e0  #8b8fa3  #5a5e70
+  Accent:        #ff4d6a  #3b82f6  #22c55e
+  Borders:       #2d3140  #3d4155
+  Misc:          #f59e0b  #ef4444  #8b5cf6  #06b6d4
+                 #374151  #4b5563  #6b7280  #9ca3af
+
+  Issues Found:
+  ┌────────────────────────────────────────────────────┐
+  │ [MUST]  #5a5e70 on #0f1117 = 2.2:1 contrast       │
+  │         Need 4.5:1 → change to #9399ad (4.7:1)    │
+  │                                                    │
+  │ [SHOULD] #ff4d6a used for BOTH brand accent AND    │
+  │          error/delete states — users can't tell     │
+  │          "brand" from "danger"                     │
+  │          → Add --color-error: #ef4444              │
+  │                                                    │
+  │ [SHOULD] 23 unique colors — 8 aren't from any      │
+  │          token/variable (inline hex values)        │
+  │          → Consolidate into CSS custom properties   │
+  └────────────────────────────────────────────────────┘
+
+  Palette health: Needs cleanup
+```
+
+### 5d. Spacing Analysis (if applicable)
+
+Show the extracted spacing values to visualize inconsistency:
+
+```
+──────────────────────────────────────────────
+  Spacing Analysis
+──────────────────────────────────────────────
+
+  Spacing values found (sorted): 
+  4px  5px  6px  7px  8px  10px  12px  13px  
+  15px  16px  18px  20px  22px  24px  30px  40px
+
+  On 8pt grid:  4  8  16  24  40  (5 values)
+  Off-grid:     5  6  7  10  12  13  15  18  20  22  30  (11 values)
+
+  ┌────────────────────────────────────────────────────┐
+  │ 69% of spacing values are OFF the grid             │
+  │                                                    │
+  │ Suggested spacing scale:                           │
+  │   --space-1: 4px    --space-2: 8px                 │
+  │   --space-3: 12px   --space-4: 16px                │
+  │   --space-5: 24px   --space-6: 32px                │
+  │   --space-7: 48px   --space-8: 64px                │
+  │                                                    │
+  │ Map: 5px→4px  6px→8px  7px→8px  10px→8px           │
+  │      13px→12px  15px→16px  18px→16px  22px→24px    │
+  │      30px→32px                                     │
+  └────────────────────────────────────────────────────┘
+```
+
+### 5e. Remaining Findings by Fix Session
+
+After the Quick Win Sprint and visual analyses, group remaining findings into **Fix Sessions** — batches of related fixes that can be done together in one focused session, organized by file or theme.
+
+```
+──────────────────────────────────────────────
+  Fix Session 1: Accessibility Landmarks & Structure
+  5 findings | ~20 min | +8 pts
+──────────────────────────────────────────────
+
+  Files: index.html, crew.html, compare.html, hours.html,
+         weekly.html, trips.html
+
+  1.1  REQ-TYPO-008: Add heading hierarchy
+  ┌─ All HTML files ───────────────────────────────────┐
+  │ BEFORE:  <div class="card-title">Fleet Dashboard</div>│
+  │ AFTER:   <h1>Fleet Dashboard</h1>                  │
+  │                                                    │
+  │ BEFORE:  <div class="card-title">Vehicle Status</div>│
+  │ AFTER:   <h2>Vehicle Status</h2>                   │
+  └────────────────────────────────────────────────────┘
+
+  1.2  REQ-LIST-002: Table accessibility
+  ┌─ All HTML files with tables ───────────────────────┐
+  │ ADD:     <caption class="sr-only">                 │
+  │            Fleet vehicle status                    │
+  │          </caption>                                │
+  │ CHANGE:  <th> → <th scope="col">                   │
+  └────────────────────────────────────────────────────┘
+
+  1.3  REQ-NAV-001: Active nav state
+  ┌─ All HTML files ───────────────────────────────────┐
+  │ BEFORE:  <a class="nav-link active" ...>           │
+  │ AFTER:   <a class="nav-link active"                │
+  │             aria-current="page" ...>               │
+  └────────────────────────────────────────────────────┘
 
   ...
 
 ──────────────────────────────────────────────
-  Priority 2 — High Impact, Moderate Effort (4 findings)
+  Fix Session 2: CSS & Styling Cleanup
+  4 findings | ~15 min | +6 pts
 ──────────────────────────────────────────────
 
-  9. REQ-MODAL-001 / REQ-MODAL-006: Accessible Dialog
-     File: compare.html:151-179
-     Issue: Trip Inspector panel has no dialog role, focus trap, or labels
-     Fix: Add role="dialog" aria-modal="true", implement focus trap
-     Effort: Moderate (15-20 min)
+  File: public/css/style.css
+
+  2.1  REQ-WEB-004: Focus visible styles
+  ┌─ style.css:214-217 ────────────────────────────────┐
+  │ BEFORE:                                            │
+  │   input:focus, select:focus {                      │
+  │     outline: none;                                 │
+  │     border-color: var(--accent);                   │
+  │   }                                                │
+  │                                                    │
+  │ AFTER:                                             │
+  │   input:focus-visible, select:focus-visible {      │
+  │     outline: 2px solid var(--accent);              │
+  │     outline-offset: 2px;                           │
+  │   }                                                │
+  │   button:focus-visible {                           │
+  │     outline: 2px solid var(--accent);              │
+  │     outline-offset: 2px;                           │
+  │   }                                                │
+  └────────────────────────────────────────────────────┘
 
   ...
 ```
 
-### 5d. What's Working Well
+### 5f. What's Working Well
 
-Always include a positive section:
+Always include positives — be specific about WHY these are good:
 
 ```
 ──────────────────────────────────────────────
   What's Working Well
 ──────────────────────────────────────────────
 
-  1. Cohesive dark design system — CSS custom properties with
-     consistent tones and meaningful accent colors.
-  2. Consistent navigation — Same nav structure on all pages
-     with clear active state.
-  3. Good semantic foundation — <nav>, <table>, <button>, and
-     <label> used correctly in most places.
+  1. Cohesive dark design system
+     Your CSS custom property palette (--bg-primary, --text-primary,
+     --accent) is well-structured. 12 of 15 background/text colors
+     come from variables — that's good token discipline.
+
+  2. Consistent navigation pattern
+     Same nav on all 6 pages with matching active indicator.
+     This passes REQ-NAV-004 (consistent placement) and partially
+     REQ-NAV-001 (current location — just needs aria-current).
+
+  3. Good semantic element usage
+     <nav>, <table>, <button>, <label>, <select> used correctly.
+     Tables use proper <thead>/<tbody>. This is a stronger foundation
+     than most projects we review.
+
+  4. Thoughtful product UX
+     Split-view pattern, progress bars, abort buttons, and the
+     step-by-step Compare workflow show strong product thinking
+     beyond just visual design.
 ```
 
-### 5e. Interactive Next Steps
+### 5g. Score Projection
 
-After presenting results, use **AskUserQuestion** to offer next steps:
+Show what the score would be after fixing each session:
+
+```
+──────────────────────────────────────────────
+  Score Projection
+──────────────────────────────────────────────
+
+  Current:          62/100  [████████████░░░░░░░░]  D
+
+  After Sprint:     78/100  [███████████████░░░░░]  C+
+  + Session 1:      86/100  [█████████████████░░░]  B
+  + Session 2:      92/100  [██████████████████░░]  A-
+  + All remaining:  97/100  [███████████████████░]  A
+
+  Time to B grade: ~35 min (Sprint + Session 1)
+  Time to A grade: ~2 hours (all sessions)
+```
+
+### 5h. Interactive Next Steps
+
+Use **AskUserQuestion** to offer next steps:
 
 **Question:** "What would you like to do next?"
 
 **Options:**
-1. **Auto-fix Priority 1 issues** — Let me fix all quick, high-impact issues now *(Recommended)*
-2. **Auto-fix all MUST violations** — Fix all accessibility errors (may take longer)
-3. **Deep dive into a category** — Explore one category's findings in detail
-4. **Save report to file** — Write `design-review.md` to disk
-5. **I'll fix these myself** — Done for now
+1. **Run the Quick Win Sprint** — Auto-fix the top 6 issues in ~15 minutes, gain +16 points *(Recommended)*
+2. **Run Fix Session 1** — Fix accessibility landmarks & structure (~20 min, +8 pts)
+3. **Auto-fix ALL errors** — Fix all MUST violations across all sessions
+4. **Deep dive into a category** — Explore one category's findings in detail
+5. **Save report to file** — Write `design-review.md` to disk
+6. **I'll fix these myself** — Done for now
 
 ---
 
@@ -400,59 +638,99 @@ After presenting results, use **AskUserQuestion** to offer next steps:
 
 When the user chooses to fix (either from the menu or via `/design-review --fix`):
 
-### 6a. Fix Plan
+### 6a. Fix Plan with Point Preview
 
-Before making changes, show the plan:
+Before making changes, show the plan with expected score impact:
 
 ```
-  Fix Plan
-  ────────
-  I'll fix [N] issues in this order:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Fix Plan: Quick Win Sprint
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  1. [REQ-ID] — [description] (file.html)
-  2. [REQ-ID] — [description] (style.css)
-  ...
+  6 fixes across 7 files
+  Expected score change: 62 → 78 (+16 points)
 
-  Files that will be modified: [list]
+  Files that will be modified:
+    public/css/style.css (2 changes)
+    public/index.html (2 changes)
+    public/crew.html (1 change)
+    public/compare.html (1 change)
+    public/hours.html (1 change)
+    public/weekly.html (1 change)
+    public/trips.html (1 change)
 
-  Shall I proceed?
+  Shall I proceed? (y/n)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 Wait for confirmation before making changes.
 
-### 6b. Apply Fixes
+### 6b. Apply Fixes with Live Progress
 
-For each fix:
-1. Make the code change
-2. Show a brief summary of what changed
-3. Move to the next fix
+For each fix, show a before/after diff as it's applied:
+
+```
+  Applying fix 1/6: REQ-TYPO-001 (body text size)
+  ┌─ style.css:24 ─────────────────────────────────────┐
+  │ - font-size: 14px;                                 │
+  │ + font-size: 16px;                                 │
+  └────────────────────────────────────────────────────┘
+  Done. (+3 pts)
+
+  Applying fix 2/6: REQ-A11Y-O-008 (skip navigation)
+  ┌─ index.html:1 (and 5 other files) ─────────────────┐
+  │ + <a href="#main" class="skip-link">               │
+  │ +   Skip to main content                           │
+  │ + </a>                                             │
+  └────────────────────────────────────────────────────┘
+  Done. (+3 pts)
+
+  ...
+```
 
 Group related fixes that affect the same file — make all edits to a file at once.
 
-### 6c. Post-Fix Verification
+### 6c. Post-Fix Score Comparison
 
-After fixes are applied, show:
+After fixes are applied, show a prominent before/after:
 
 ```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   Fix Results
-  ───────────
-  Applied: [N] fixes across [M] files
-  
-  Score Change: 62/100 → 78/100 (+16 points)
-  
-  Remaining issues: [X] errors, [Y] warnings, [Z] suggestions
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Before:   62/100  [████████████░░░░░░░░]  D
+  After:    78/100  [███████████████░░░░░]  C+    +16 pts
+
+  Applied: 6 fixes across 7 files
+
+  Category Impact:
+  ┌─────────────────────┬────────┬────────┬────────┐
+  │ Category            │ Before │ After  │ Change │
+  ├─────────────────────┼────────┼────────┼────────┤
+  │ Accessibility       │ 45     │ 65     │ +20    │
+  │ Foundations          │ 72     │ 78     │ +6     │
+  │ Components           │ 68     │ 72     │ +4     │
+  │ Patterns             │ 70     │ 73     │ +3     │
+  │ Platform (Web)       │ 80     │ 83     │ +3     │
+  └─────────────────────┴────────┴────────┴────────┘
+
+  Remaining: 8 errors | 10 warnings | 5 suggestions
+  Next milestone: B grade at 80 — needs 2 more points
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ### 6d. Offer Next Round
 
 Use **AskUserQuestion** again:
 
-**Question:** "Fixes applied. What next?"
+**Question:** "Sprint complete! Score: 62 → 78. What next?"
 
 **Options:**
-1. **Fix the next batch** — Move to Priority 2 issues
-2. **Re-run the full review** — Verify all fixes and get updated score
-3. **Done for now** — End the review session
+1. **Run Fix Session 1** — Accessibility landmarks & structure (+8 pts, ~20 min)
+2. **Run all remaining sessions** — Fix everything (~2 hours)
+3. **Re-run the full review** — Verify all fixes and get updated score
+4. **Done for now** — End the review session
 
 ---
 
