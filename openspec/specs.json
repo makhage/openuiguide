@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated": "2026-04-06",
+  "generated": "2026-04-07",
   "categories": {
     "accessibility": {
       "operable": {
@@ -814,6 +814,171 @@
               "container",
               "surface",
               "differentiation"
+            ]
+          }
+        ]
+      },
+      "data-visualization": {
+        "title": "Components: Data Visualization",
+        "spec_path": "openspec/specs/components/data-visualization/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-DATAVIZ-001",
+            "title": "Chart Alternative Text",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "chart",
+              "alternative",
+              "text"
+            ]
+          },
+          {
+            "id": "REQ-DATAVIZ-002",
+            "title": "Color-Independent Data Encoding",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "color-independent",
+              "data",
+              "encoding"
+            ]
+          },
+          {
+            "id": "REQ-DATAVIZ-003",
+            "title": "Chart Axis Labels and Units",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "chart",
+              "axis",
+              "labels"
+            ]
+          },
+          {
+            "id": "REQ-DATAVIZ-004",
+            "title": "Data Point Interactivity",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "data",
+              "point",
+              "interactivity"
+            ]
+          },
+          {
+            "id": "REQ-DATAVIZ-005",
+            "title": "Legend Placement and Clarity",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "legend",
+              "placement",
+              "clarity"
+            ]
+          },
+          {
+            "id": "REQ-DATAVIZ-006",
+            "title": "Appropriate Chart Type",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "appropriate",
+              "chart",
+              "type"
+            ]
+          },
+          {
+            "id": "REQ-DATAVIZ-007",
+            "title": "Responsive Charts",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "responsive",
+              "charts"
+            ]
+          },
+          {
+            "id": "REQ-DATAVIZ-008",
+            "title": "Meaningful Zero Baseline",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "data visualization",
+              "meaningful",
+              "zero",
+              "baseline"
             ]
           }
         ]
@@ -1846,6 +2011,200 @@
           }
         ]
       },
+      "micro-interactions": {
+        "title": "Micro-Interactions & Animation Patterns",
+        "spec_path": "openspec/specs/foundations/micro-interactions/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-MICRO-001",
+            "title": "Button Press Feedback Animation",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "button",
+              "press",
+              "feedback"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-002",
+            "title": "Hover State Transitions",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "desktop"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "hover",
+              "state",
+              "transitions"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-003",
+            "title": "Scroll-Triggered Animation Restraint",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "scroll-triggered",
+              "animation",
+              "restraint"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-004",
+            "title": "Page/Route Transition Consistency",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "page/route",
+              "transition",
+              "consistency"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-005",
+            "title": "Staggered List Animation",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "staggered",
+              "list",
+              "animation"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-006",
+            "title": "Toggle and Switch Animation",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "toggle",
+              "switch",
+              "animation"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-007",
+            "title": "Form Input Focus Animation",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "form",
+              "input",
+              "focus"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-008",
+            "title": "Skeleton Shimmer Animation",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "skeleton",
+              "shimmer",
+              "animation"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-009",
+            "title": "Exit/Dismiss Animation",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "exit/dismiss",
+              "animation"
+            ]
+          },
+          {
+            "id": "REQ-MICRO-010",
+            "title": "Animation Choreography",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "micro interactions",
+              "animation",
+              "choreography"
+            ]
+          }
+        ]
+      },
       "motion-and-animation": {
         "title": "Foundations: Motion and Animation",
         "spec_path": "openspec/specs/foundations/motion-and-animation/spec.md",
@@ -2673,6 +3032,172 @@
           }
         ]
       },
+      "visual-consistency": {
+        "title": "Visual Consistency",
+        "spec_path": "openspec/specs/foundations/visual-consistency/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-VCON-001",
+            "title": "Consistent Border Radius",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "consistent",
+              "border",
+              "radius"
+            ]
+          },
+          {
+            "id": "REQ-VCON-002",
+            "title": "Consistent Shadow/Elevation Scale",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "consistent",
+              "shadow/elevation",
+              "scale"
+            ]
+          },
+          {
+            "id": "REQ-VCON-003",
+            "title": "Consistent Divider/Separator Styling",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "consistent",
+              "divider/separator",
+              "styling"
+            ]
+          },
+          {
+            "id": "REQ-VCON-004",
+            "title": "Consistent Interactive Element Styling",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "consistent",
+              "interactive",
+              "element"
+            ]
+          },
+          {
+            "id": "REQ-VCON-005",
+            "title": "Icon Style Uniformity",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "icon",
+              "style",
+              "uniformity"
+            ]
+          },
+          {
+            "id": "REQ-VCON-006",
+            "title": "Consistent Transition Timing",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "consistent",
+              "transition",
+              "timing"
+            ]
+          },
+          {
+            "id": "REQ-VCON-007",
+            "title": "Consistent Spacing Tokens in Use",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "consistent",
+              "spacing",
+              "tokens"
+            ]
+          },
+          {
+            "id": "REQ-VCON-008",
+            "title": "Consistent Text Color Usage",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "foundations",
+              "visual consistency",
+              "consistent",
+              "text",
+              "color"
+            ]
+          }
+        ]
+      },
       "visual-hierarchy": {
         "title": "Foundations: Visual Hierarchy",
         "spec_path": "openspec/specs/foundations/visual-hierarchy/spec.md",
@@ -2799,6 +3324,205 @@
       }
     },
     "patterns": {
+      "cta-and-conversion": {
+        "title": "Patterns: Call-to-Action (CTA) and Conversion",
+        "spec_path": "openspec/specs/patterns/cta-and-conversion/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-CTA-001",
+            "title": "Single Primary CTA Per Screen/Section",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "single",
+              "primary",
+              "screen/section"
+            ]
+          },
+          {
+            "id": "REQ-CTA-002",
+            "title": "CTA Above the Fold",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "above",
+              "fold"
+            ]
+          },
+          {
+            "id": "REQ-CTA-003",
+            "title": "Action-Oriented CTA Copy",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "action-oriented",
+              "copy"
+            ]
+          },
+          {
+            "id": "REQ-CTA-004",
+            "title": "CTA Visual Contrast Against Surroundings",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "visual",
+              "contrast",
+              "against"
+            ]
+          },
+          {
+            "id": "REQ-CTA-005",
+            "title": "CTA Size Proportional to Importance",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "size",
+              "proportional",
+              "importance"
+            ]
+          },
+          {
+            "id": "REQ-CTA-006",
+            "title": "Limit CTAs Per Page",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "limit",
+              "ctas",
+              "page"
+            ]
+          },
+          {
+            "id": "REQ-CTA-007",
+            "title": "CTA Proximity to Value Proposition",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "proximity",
+              "value",
+              "proposition"
+            ]
+          },
+          {
+            "id": "REQ-CTA-008",
+            "title": "CTA Loading and Feedback State",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "loading",
+              "feedback",
+              "state"
+            ]
+          },
+          {
+            "id": "REQ-CTA-009",
+            "title": "No Dark Patterns in CTAs",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "dark",
+              "patterns",
+              "ctas"
+            ]
+          },
+          {
+            "id": "REQ-CTA-010",
+            "title": "Persistent/Sticky CTA for Long Pages",
+            "level": "CONSIDER",
+            "platforms": [
+              "all"
+            ],
+            "tags": [
+              "patterns",
+              "cta and conversion",
+              "persistent/sticky",
+              "long",
+              "pages"
+            ]
+          }
+        ]
+      },
       "dark-mode": {
         "title": "Patterns: Dark Mode",
         "spec_path": "openspec/specs/patterns/dark-mode/spec.md",
@@ -3000,6 +3724,164 @@
               "error handling",
               "error",
               "pages"
+            ]
+          }
+        ]
+      },
+      "internationalization": {
+        "title": "Internationalization (i18n)",
+        "spec_path": "openspec/specs/patterns/internationalization/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-I18N-001",
+            "title": "No Hardcoded User-Facing Strings",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "hardcoded",
+              "user-facing",
+              "strings"
+            ]
+          },
+          {
+            "id": "REQ-I18N-002",
+            "title": "Text Expansion Room",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "text",
+              "expansion",
+              "room"
+            ]
+          },
+          {
+            "id": "REQ-I18N-003",
+            "title": "RTL (Right-to-Left) Layout Support",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "(right-to-left)",
+              "layout",
+              "support"
+            ]
+          },
+          {
+            "id": "REQ-I18N-004",
+            "title": "Locale-Aware Formatting",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "locale-aware",
+              "formatting"
+            ]
+          },
+          {
+            "id": "REQ-I18N-005",
+            "title": "Pluralization Rules",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "pluralization",
+              "rules"
+            ]
+          },
+          {
+            "id": "REQ-I18N-006",
+            "title": "No Text in Images",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "text",
+              "images"
+            ]
+          },
+          {
+            "id": "REQ-I18N-007",
+            "title": "Accessible Language Declaration",
+            "level": "MUST",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "accessible",
+              "language",
+              "declaration"
+            ]
+          },
+          {
+            "id": "REQ-I18N-008",
+            "title": "Font Support for Target Scripts",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "internationalization",
+              "font",
+              "support",
+              "target"
             ]
           }
         ]
@@ -3283,6 +4165,308 @@
               "adaptive",
               "layout",
               "patterns"
+            ]
+          }
+        ]
+      },
+      "touch-gestures": {
+        "title": "Touch Gestures",
+        "spec_path": "openspec/specs/patterns/touch-gestures/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-GESTURE-001",
+            "title": "Swipe-to-Dismiss for Bottom Sheets and Modals",
+            "level": "SHOULD",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "swipe-to-dismiss",
+              "bottom",
+              "sheets"
+            ]
+          },
+          {
+            "id": "REQ-GESTURE-002",
+            "title": "Swipe Actions on List Items",
+            "level": "CONSIDER",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "swipe",
+              "actions",
+              "list"
+            ]
+          },
+          {
+            "id": "REQ-GESTURE-003",
+            "title": "Pull-to-Refresh",
+            "level": "SHOULD",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "pull-to-refresh"
+            ]
+          },
+          {
+            "id": "REQ-GESTURE-004",
+            "title": "Long-Press for Context Menu",
+            "level": "SHOULD",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "long-press",
+              "context",
+              "menu"
+            ]
+          },
+          {
+            "id": "REQ-GESTURE-005",
+            "title": "Pinch-to-Zoom on Media",
+            "level": "SHOULD",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "pinch-to-zoom",
+              "media"
+            ]
+          },
+          {
+            "id": "REQ-GESTURE-006",
+            "title": "Edge Swipe for Navigation",
+            "level": "MUST",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "edge",
+              "swipe",
+              "navigation"
+            ]
+          },
+          {
+            "id": "REQ-GESTURE-007",
+            "title": "Gesture Discoverability",
+            "level": "SHOULD",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "gesture",
+              "discoverability"
+            ]
+          },
+          {
+            "id": "REQ-GESTURE-008",
+            "title": "Gesture Conflict Prevention",
+            "level": "MUST",
+            "platforms": [
+              "ios",
+              "android",
+              "cross-platform"
+            ],
+            "tags": [
+              "patterns",
+              "touch gestures",
+              "gesture",
+              "conflict",
+              "prevention"
+            ]
+          }
+        ]
+      },
+      "ux-writing": {
+        "title": "Patterns: UX Writing",
+        "spec_path": "openspec/specs/patterns/ux-writing/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-COPY-001",
+            "title": "Descriptive Button Labels",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "descriptive",
+              "button",
+              "labels"
+            ]
+          },
+          {
+            "id": "REQ-COPY-002",
+            "title": "Human Error Messages",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "human",
+              "error",
+              "messages"
+            ]
+          },
+          {
+            "id": "REQ-COPY-003",
+            "title": "Helpful Placeholder Text",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "helpful",
+              "placeholder",
+              "text"
+            ]
+          },
+          {
+            "id": "REQ-COPY-004",
+            "title": "Confirmation Copy That States Consequences",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "confirmation",
+              "copy",
+              "states"
+            ]
+          },
+          {
+            "id": "REQ-COPY-005",
+            "title": "Positive Empty State Copy",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "positive",
+              "empty",
+              "state"
+            ]
+          },
+          {
+            "id": "REQ-COPY-006",
+            "title": "Concise Tooltip and Help Text",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "concise",
+              "tooltip",
+              "help"
+            ]
+          },
+          {
+            "id": "REQ-COPY-007",
+            "title": "Consistent Terminology",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "consistent",
+              "terminology"
+            ]
+          },
+          {
+            "id": "REQ-COPY-008",
+            "title": "No Blame Language",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ux writing",
+              "blame",
+              "language"
             ]
           }
         ]
@@ -4082,17 +5266,17 @@
     }
   },
   "stats": {
-    "total_requirements": 215,
+    "total_requirements": 275,
     "by_level": {
-      "MUST": 94,
-      "SHOULD": 101,
-      "CONSIDER": 20
+      "MUST": 104,
+      "SHOULD": 146,
+      "CONSIDER": 25
     },
     "by_category": {
       "accessibility": 32,
-      "components": 40,
-      "foundations": 69,
-      "patterns": 25,
+      "components": 48,
+      "foundations": 87,
+      "patterns": 59,
       "platforms": 49
     }
   }

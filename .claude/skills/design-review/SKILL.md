@@ -113,8 +113,10 @@ Based on the chosen scope, load the relevant spec files from `openspec/specs/`.
 - `openspec/specs/foundations/color-and-theming/spec.md`
 - `openspec/specs/foundations/color-harmony/spec.md`
 - `openspec/specs/foundations/visual-hierarchy/spec.md`
+- `openspec/specs/foundations/visual-consistency/spec.md`
 - `openspec/specs/foundations/iconography-and-imagery/spec.md`
 - `openspec/specs/foundations/motion-and-animation/spec.md`
+- `openspec/specs/foundations/micro-interactions/spec.md`
 
 ### Load for Full / Component Review:
 - `openspec/specs/components/buttons-and-actions/spec.md`
@@ -124,6 +126,7 @@ Based on the chosen scope, load the relevant spec files from `openspec/specs/`.
 - `openspec/specs/components/modals-and-overlays/spec.md`
 - `openspec/specs/components/lists-and-tables/spec.md`
 - `openspec/specs/components/feedback-and-status/spec.md`
+- `openspec/specs/components/data-visualization/spec.md`
 
 ### Load for Full / Pattern Review:
 - `openspec/specs/patterns/responsive-and-adaptive/spec.md`
@@ -131,6 +134,10 @@ Based on the chosen scope, load the relevant spec files from `openspec/specs/`.
 - `openspec/specs/patterns/loading-and-performance/spec.md`
 - `openspec/specs/patterns/onboarding-and-empty-states/spec.md`
 - `openspec/specs/patterns/error-handling/spec.md`
+- `openspec/specs/patterns/cta-and-conversion/spec.md`
+- `openspec/specs/patterns/ux-writing/spec.md`
+- `openspec/specs/patterns/touch-gestures/spec.md`
+- `openspec/specs/patterns/internationalization/spec.md`
 
 ### Load based on detected platform:
 - Web: `openspec/specs/platforms/web/spec.md`
@@ -537,6 +544,13 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --spec visual` | Visual design review only |
 | `/design-review --spec visual-polish` | Text overlap + color harmony + spacing optimization |
 | `/design-review --spec colors` | Color scheme analysis (harmony, saturation, dual-purpose) |
+| `/design-review --spec animations` | Motion + micro-interactions review |
+| `/design-review --spec cta` | CTA placement, copy, prominence, conversion patterns |
+| `/design-review --spec dataviz` | Chart/graph accessibility and best practices |
+| `/design-review --spec copy` | UX writing, microcopy, and content quality |
+| `/design-review --spec gestures` | Touch gesture patterns (mobile/tablet) |
+| `/design-review --spec i18n` | Internationalization readiness |
+| `/design-review --spec consistency` | Visual consistency (radius, shadows, tokens) |
 | `/design-review --spec components` | Component review only |
 | `/design-review --save` | Full review + save to `design-review.md` |
 | `/design-review --summary` | Score + top 5 issues only |
