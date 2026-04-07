@@ -182,15 +182,21 @@ Based on the chosen scope, load the relevant spec files from `openspec/specs/`.
 - `openspec/specs/components/lists-and-tables/spec.md`
 - `openspec/specs/components/feedback-and-status/spec.md`
 - `openspec/specs/components/data-visualization/spec.md`
+- `openspec/specs/components/search-and-filtering/spec.md`
 
 ### Load for Full / Pattern Review:
 - `openspec/specs/patterns/responsive-and-adaptive/spec.md`
 - `openspec/specs/patterns/dark-mode/spec.md`
 - `openspec/specs/patterns/loading-and-performance/spec.md`
+- `openspec/specs/patterns/performance-ux/spec.md`
 - `openspec/specs/patterns/onboarding-and-empty-states/spec.md`
 - `openspec/specs/patterns/error-handling/spec.md`
 - `openspec/specs/patterns/cta-and-conversion/spec.md`
 - `openspec/specs/patterns/ux-writing/spec.md`
+- `openspec/specs/patterns/cognitive-load/spec.md`
+- `openspec/specs/patterns/security-and-trust/spec.md`
+- `openspec/specs/patterns/ai-interfaces/spec.md`
+- `openspec/specs/patterns/notifications/spec.md`
 - `openspec/specs/patterns/touch-gestures/spec.md`
 - `openspec/specs/patterns/internationalization/spec.md`
 
@@ -829,6 +835,12 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --spec gestures` | Touch gesture patterns (mobile/tablet) |
 | `/design-review --spec i18n` | Internationalization readiness |
 | `/design-review --spec consistency` | Visual consistency (radius, shadows, tokens) |
+| `/design-review --spec security` | Security & trust UX (auth, privacy, data masking) |
+| `/design-review --spec performance` | Performance UX (CWV, images, fonts, rendering) |
+| `/design-review --spec cognitive` | Cognitive load (complexity, choices, progressive disclosure) |
+| `/design-review --spec ai` | AI interface patterns (disclosure, confidence, fallbacks) |
+| `/design-review --spec search` | Search & filtering UX |
+| `/design-review --spec notifications` | Notification & communication patterns |
 | `/design-review --spec components` | Component review only |
 | `/design-review --save` | Full review + save to `design-review.md` |
 | `/design-review --summary` | Score + top 5 issues only |

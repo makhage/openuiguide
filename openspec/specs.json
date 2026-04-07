@@ -1575,6 +1575,201 @@
             ]
           }
         ]
+      },
+      "search-and-filtering": {
+        "title": "Search & Filtering",
+        "spec_path": "openspec/specs/components/search-and-filtering/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-SEARCH-001",
+            "title": "Visible Search Input",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "visible",
+              "search",
+              "input"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-002",
+            "title": "Search Suggestions and Autocomplete",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "search",
+              "suggestions",
+              "autocomplete"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-003",
+            "title": "No-Results State",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "no-results",
+              "state"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-004",
+            "title": "Filter Visibility and Affordance",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "filter",
+              "visibility",
+              "affordance"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-005",
+            "title": "Sort Controls",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "sort",
+              "controls"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-006",
+            "title": "Result Count",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "result",
+              "count"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-007",
+            "title": "Keyboard Navigation for Search Results",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "desktop"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "keyboard",
+              "navigation",
+              "search"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-008",
+            "title": "Search History and Recent Queries",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "search",
+              "history",
+              "recent"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-009",
+            "title": "Faceted Search for Large Datasets",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "faceted",
+              "search",
+              "large"
+            ]
+          },
+          {
+            "id": "REQ-SEARCH-010",
+            "title": "Persistent Search State",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "cross-platform"
+            ],
+            "tags": [
+              "components",
+              "search and filtering",
+              "persistent",
+              "search",
+              "state"
+            ]
+          }
+        ]
       }
     },
     "foundations": {
@@ -3324,6 +3519,331 @@
       }
     },
     "patterns": {
+      "ai-interfaces": {
+        "title": "AI Interface Patterns",
+        "spec_path": "openspec/specs/patterns/ai-interfaces/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-AI-001",
+            "title": "AI Disclosure",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "disclosure"
+            ]
+          },
+          {
+            "id": "REQ-AI-002",
+            "title": "Processing Feedback for AI Operations",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "processing",
+              "feedback",
+              "operations"
+            ]
+          },
+          {
+            "id": "REQ-AI-003",
+            "title": "Confidence Indicators",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "confidence",
+              "indicators"
+            ]
+          },
+          {
+            "id": "REQ-AI-004",
+            "title": "Human Override and Edit",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "human",
+              "override",
+              "edit"
+            ]
+          },
+          {
+            "id": "REQ-AI-005",
+            "title": "Fallback for AI Failures",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "fallback",
+              "failures"
+            ]
+          },
+          {
+            "id": "REQ-AI-006",
+            "title": "AI Context and Source Attribution",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "context",
+              "source",
+              "attribution"
+            ]
+          },
+          {
+            "id": "REQ-AI-007",
+            "title": "Rate and Cost Awareness",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "rate",
+              "cost",
+              "awareness"
+            ]
+          },
+          {
+            "id": "REQ-AI-008",
+            "title": "AI Memory and Personalization Controls",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "ai interfaces",
+              "memory",
+              "personalization",
+              "controls"
+            ]
+          }
+        ]
+      },
+      "cognitive-load": {
+        "title": "Patterns: Cognitive Load & UI Complexity",
+        "spec_path": "openspec/specs/patterns/cognitive-load/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-COGLOAD-001",
+            "title": "Limit Choices Per Screen",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "limit",
+              "choices",
+              "screen"
+            ]
+          },
+          {
+            "id": "REQ-COGLOAD-002",
+            "title": "Progressive Disclosure",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "progressive",
+              "disclosure"
+            ]
+          },
+          {
+            "id": "REQ-COGLOAD-003",
+            "title": "Chunking Long Forms",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "chunking",
+              "long",
+              "forms"
+            ]
+          },
+          {
+            "id": "REQ-COGLOAD-004",
+            "title": "Sensible Defaults",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "sensible",
+              "defaults"
+            ]
+          },
+          {
+            "id": "REQ-COGLOAD-005",
+            "title": "Clear Visual Hierarchy Guides the Eye",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "clear",
+              "visual",
+              "hierarchy"
+            ]
+          },
+          {
+            "id": "REQ-COGLOAD-006",
+            "title": "Reduce Unnecessary Decoration",
+            "level": "CONSIDER",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "reduce",
+              "unnecessary",
+              "decoration"
+            ]
+          },
+          {
+            "id": "REQ-COGLOAD-007",
+            "title": "Consistent Mental Models",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "consistent",
+              "mental",
+              "models"
+            ]
+          },
+          {
+            "id": "REQ-COGLOAD-008",
+            "title": "Recognition Over Recall",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "cognitive load",
+              "recognition",
+              "recall"
+            ]
+          }
+        ]
+      },
       "cta-and-conversion": {
         "title": "Patterns: Call-to-Action (CTA) and Conversion",
         "spec_path": "openspec/specs/patterns/cta-and-conversion/spec.md",
@@ -3986,6 +4506,155 @@
           }
         ]
       },
+      "notifications": {
+        "title": "Notifications & Communication",
+        "spec_path": "openspec/specs/patterns/notifications/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-NOTIFY-001",
+            "title": "Permission Pre-Prompt",
+            "level": "SHOULD",
+            "platforms": [
+              "all"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "permission",
+              "pre-prompt"
+            ]
+          },
+          {
+            "id": "REQ-NOTIFY-002",
+            "title": "Notification Preference Controls",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "notification",
+              "preference",
+              "controls"
+            ]
+          },
+          {
+            "id": "REQ-NOTIFY-003",
+            "title": "Actionable Notifications",
+            "level": "SHOULD",
+            "platforms": [
+              "mobile"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "actionable",
+              "notifications"
+            ]
+          },
+          {
+            "id": "REQ-NOTIFY-004",
+            "title": "In-App Notification Center",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "in-app",
+              "notification",
+              "center"
+            ]
+          },
+          {
+            "id": "REQ-NOTIFY-005",
+            "title": "Non-Intrusive In-App Messages",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "non-intrusive",
+              "in-app",
+              "messages"
+            ]
+          },
+          {
+            "id": "REQ-NOTIFY-006",
+            "title": "Notification Frequency Capping",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "notification",
+              "frequency",
+              "capping"
+            ]
+          },
+          {
+            "id": "REQ-NOTIFY-007",
+            "title": "Notification Sound and Vibration Respect",
+            "level": "MUST",
+            "platforms": [
+              "mobile"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "notification",
+              "sound",
+              "vibration"
+            ]
+          },
+          {
+            "id": "REQ-NOTIFY-008",
+            "title": "Unsubscribe and Opt-Out Ease",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android",
+              "desktop",
+              "tv",
+              "wearable"
+            ],
+            "tags": [
+              "patterns",
+              "notifications",
+              "unsubscribe",
+              "opt-out",
+              "ease"
+            ]
+          }
+        ]
+      },
       "onboarding-and-empty-states": {
         "title": "Patterns: Onboarding and Empty States",
         "spec_path": "openspec/specs/patterns/onboarding-and-empty-states/spec.md",
@@ -4067,6 +4736,167 @@
               "onboarding and empty states",
               "first-run",
               "experience"
+            ]
+          }
+        ]
+      },
+      "performance-ux": {
+        "title": "Patterns: Performance UX",
+        "spec_path": "openspec/specs/patterns/performance-ux/spec.md",
+        "requirements": [
+          {
+            "id": "REQ-PERF-001",
+            "title": "Image Dimension Attributes",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "all platforms with image layout"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "image",
+              "dimension",
+              "attributes"
+            ]
+          },
+          {
+            "id": "REQ-PERF-002",
+            "title": "Lazy Loading Below-the-Fold Images",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "ios",
+              "android"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "lazy",
+              "loading",
+              "below-the-fold"
+            ]
+          },
+          {
+            "id": "REQ-PERF-003",
+            "title": "Modern Image Formats",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "modern",
+              "image",
+              "formats"
+            ]
+          },
+          {
+            "id": "REQ-PERF-004",
+            "title": "Font Loading Strategy",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "font",
+              "loading",
+              "strategy"
+            ]
+          },
+          {
+            "id": "REQ-PERF-005",
+            "title": "Render-Blocking Resources",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "render-blocking",
+              "resources"
+            ]
+          },
+          {
+            "id": "REQ-PERF-006",
+            "title": "Animation Performance Budget",
+            "level": "MUST",
+            "platforms": [
+              "web",
+              "ios",
+              "android"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "animation",
+              "performance",
+              "budget"
+            ]
+          },
+          {
+            "id": "REQ-PERF-007",
+            "title": "Viewport-Sized Hero Content",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "viewport-sized",
+              "hero",
+              "content"
+            ]
+          },
+          {
+            "id": "REQ-PERF-008",
+            "title": "Third-Party Script Impact",
+            "level": "SHOULD",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "third-party",
+              "script",
+              "impact"
+            ]
+          },
+          {
+            "id": "REQ-PERF-009",
+            "title": "Interaction Responsiveness (INP)",
+            "level": "SHOULD",
+            "platforms": [
+              "web",
+              "all platforms"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "interaction",
+              "responsiveness",
+              "(inp)"
+            ]
+          },
+          {
+            "id": "REQ-PERF-010",
+            "title": "Resource Hints for Critical Navigation",
+            "level": "CONSIDER",
+            "platforms": [
+              "web"
+            ],
+            "tags": [
+              "patterns",
+              "performance ux",
+              "resource",
+              "hints",
+              "critical"
             ]
           }
         ]
@@ -5266,17 +6096,17 @@
     }
   },
   "stats": {
-    "total_requirements": 275,
+    "total_requirements": 319,
     "by_level": {
-      "MUST": 104,
-      "SHOULD": 146,
-      "CONSIDER": 25
+      "MUST": 114,
+      "SHOULD": 177,
+      "CONSIDER": 28
     },
     "by_category": {
       "accessibility": 32,
-      "components": 48,
+      "components": 58,
       "foundations": 87,
-      "patterns": 59,
+      "patterns": 93,
       "platforms": 49
     }
   }
