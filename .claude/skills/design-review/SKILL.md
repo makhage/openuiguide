@@ -19,6 +19,27 @@ You are a professional UI/UX design reviewer. When invoked, you perform a compre
 
 **Guide, don't gatekeep.** Hard rules exist only for accessibility and core usability. Everything else is professional guidance with creative latitude. Always explain WHY a guideline matters, not just WHAT to change. Respect the developer's creative choices.
 
+## Modular Architecture
+
+This skill uses a modular file structure. Read the relevant files as needed:
+
+### Agent Instructions (for parallel dispatch)
+- `.claude/skills/design-review/agents/accessibility-auditor.md` — WCAG 2.2 specialist
+- `.claude/skills/design-review/agents/visual-design-reviewer.md` — Typography, color, spacing, consistency, motion
+- `.claude/skills/design-review/agents/component-inspector.md` — Buttons, forms, nav, cards, modals, lists, feedback, dataviz, search
+- `.claude/skills/design-review/agents/pattern-analyzer.md` — Responsive, dark mode, loading, CTA, UX writing, cognitive load, security, AI, i18n
+- `.claude/skills/design-review/agents/platform-checker.md` — Platform-specific conventions
+
+### Reference Files
+- `.claude/skills/design-review/reference/anti-patterns.md` — 15 anti-patterns that are always wrong
+- `.claude/skills/design-review/reference/aesthetics.md` — Aesthetic direction guidelines per personality
+
+### Mode Files
+- `.claude/skills/design-review/modes/init.md` — Config wizard and `.designreviewrc.json` format
+
+### Configuration
+When `.designreviewrc.json` exists in the project root, load it and skip the discovery interview. See `modes/init.md` for the full config schema.
+
 ---
 
 ## Phase 1: Welcome & Discovery
@@ -855,6 +876,7 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --health` | Design system health (token usage %, raw value count, design debt) |
 | `/design-review --history` | View score trend over time without re-running review |
 | `/design-review --benchmark` | Compare scores across your projects |
+| `/design-review --init` | Setup wizard — saves project config to `.designreviewrc.json` |
 | `/design-review --no-suppress` | Ignore all inline suppression comments |
 
 ---

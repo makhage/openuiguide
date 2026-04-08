@@ -1,0 +1,82 @@
+{
+  "name": "design-review",
+  "version": "1.0.0",
+  "description": "Comprehensive UI/UX design review with 329 requirements across 45 categories. Checks accessibility (WCAG 2.2), typography, color harmony, spacing, visual consistency, micro-interactions, CTA analysis, data visualization, UX writing, cognitive load, security UX, performance, AI interfaces, i18n, and platform conventions across 7 platforms.",
+  "author": "OpenUI Guide Contributors",
+  "license": "MIT",
+  "repository": "https://github.com/makhage/openuiguide",
+  "homepage": "https://github.com/makhage/openuiguide",
+  "keywords": [
+    "design-review",
+    "ui-audit",
+    "ux-review",
+    "accessibility",
+    "wcag",
+    "design-system",
+    "frontend",
+    "color-contrast",
+    "typography",
+    "spacing",
+    "visual-consistency"
+  ],
+  "skills": [
+    {
+      "name": "design-review",
+      "path": "skills/design-review/SKILL.md",
+      "description": "Run a comprehensive UI/UX design review",
+      "triggers": [
+        "review my design",
+        "check my UI",
+        "design audit",
+        "accessibility check",
+        "how does it look",
+        "is this accessible",
+        "review the frontend",
+        "check accessibility",
+        "design review",
+        "UI review",
+        "is this ready for demo"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "design-review",
+      "description": "Run a design review on the current project",
+      "aliases": ["dr", "ui-review", "design-audit"]
+    }
+  ],
+  "agents": [
+    {
+      "name": "accessibility-auditor",
+      "path": "skills/design-review/agents/accessibility-auditor.md",
+      "model": "sonnet"
+    },
+    {
+      "name": "visual-design-reviewer",
+      "path": "skills/design-review/agents/visual-design-reviewer.md",
+      "model": "sonnet"
+    },
+    {
+      "name": "component-inspector",
+      "path": "skills/design-review/agents/component-inspector.md",
+      "model": "sonnet"
+    },
+    {
+      "name": "pattern-analyzer",
+      "path": "skills/design-review/agents/pattern-analyzer.md",
+      "model": "sonnet"
+    },
+    {
+      "name": "platform-checker",
+      "path": "skills/design-review/agents/platform-checker.md",
+      "model": "sonnet"
+    }
+  ],
+  "config": {
+    "confidence_threshold": 70,
+    "max_findings_per_category": 20,
+    "auto_save_history": true,
+    "history_file": ".design-review-history.json"
+  }
+}
