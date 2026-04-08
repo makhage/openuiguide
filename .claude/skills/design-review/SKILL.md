@@ -851,6 +851,11 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --spec components` | Component review only |
 | `/design-review --save` | Full review + save to `design-review.md` |
 | `/design-review --summary` | Score + top 5 issues only |
+| `/design-review --demo` | Demo readiness check (lorem ipsum, placeholders, TODOs, console.logs) |
+| `/design-review --health` | Design system health (token usage %, raw value count, design debt) |
+| `/design-review --history` | View score trend over time without re-running review |
+| `/design-review --benchmark` | Compare scores across your projects |
+| `/design-review --no-suppress` | Ignore all inline suppression comments |
 
 ---
 
@@ -1207,3 +1212,333 @@ jobs:
 ```
 
 This runs the design review on every PR that touches UI files and posts findings as PR comments.
+
+---
+
+## Audit History & Trend Tracking
+
+*Inspired by Ultraship's audit-history and growth-tracker.*
+
+Track design review scores over time to show improvement trends. Store snapshots after each review.
+
+### How It Works
+
+After each review, save a snapshot to `.design-review-history.json`:
+
+```json
+{
+  "snapshots": [
+    {
+      "date": "2026-03-15",
+      "score": 62,
+      "grade": "D",
+      "findings": { "errors": 14, "warnings": 12, "suggestions": 5 },
+      "categories": {
+        "accessibility": 45,
+        "foundations": 72,
+        "components": 68,
+        "patterns": 70,
+        "platform": 80
+      },
+      "files_reviewed": 7,
+      "requirements_checked": 329
+    }
+  ]
+}
+```
+
+### Trend Display
+
+When a previous snapshot exists, show the trend in the score dashboard:
+
+```
+  Score History
+  ─────────────
+  Mar 15    62/100  [████████████░░░░░░░░]  D
+  Mar 22    74/100  [██████████████░░░░░░]  C    +12
+  Apr 01    86/100  [█████████████████░░░]  B    +12
+  Apr 08    91/100  [██████████████████░░]  A-   +5    (current)
+
+  Trend: +29 points over 3 weeks
+  Velocity: ~10 pts/week
+```
+
+### Trigger
+
+- Auto-saves after every full review
+- `/design-review --history` to view trend without re-running review
+
+---
+
+## Demo Readiness Check
+
+*Inspired by Ultraship's demo-prep tool.*
+
+Before a demo, launch, or client presentation, scan for embarrassing artifacts that shouldn't be in production UI.
+
+### Trigger
+
+```
+/design-review --demo
+```
+
+### What It Checks
+
+```
+  Demo Readiness Scan
+  ───────────────────
+
+  Checking for presentation-blocking issues...
+
+  [FAIL] Lorem ipsum text found
+         src/components/About.tsx:12 — "Lorem ipsum dolor sit amet..."
+         src/pages/pricing.html:45 — "Lorem ipsum dolor sit..."
+
+  [FAIL] Placeholder images
+         public/images/avatar-placeholder.png used in production
+         src/components/Hero.tsx:8 — src="https://via.placeholder.com/800x400"
+
+  [FAIL] TODO/FIXME comments in UI code
+         src/components/Header.tsx:23 — "// TODO: fix mobile nav"
+         src/styles/theme.css:8 — "/* FIXME: contrast too low */"
+
+  [FAIL] Console.log statements
+         src/components/Dashboard.tsx:45 — console.log("debug data:", data)
+         src/utils/api.ts:12 — console.log("response:", res)
+
+  [PASS] Favicon present (favicon.ico found)
+  [PASS] No broken image references
+  [PASS] No test/debug routes exposed
+  [FAIL] Missing Open Graph meta tags (no og:title, og:image)
+
+  ─────────────────────
+  Demo Readiness: 4/8 checks passed (50%)
+  Status: NOT READY — fix 4 issues before presenting
+  ─────────────────────
+```
+
+---
+
+## Content Readability Scoring
+
+*Inspired by Ultraship's content-scorer (Flesch-Kincaid analysis).*
+
+Analyze the readability of user-facing text — headings, button labels, error messages, descriptions, tooltips.
+
+### When It Runs
+
+Included automatically in Full Review. Also available via:
+```
+/design-review --spec readability
+```
+
+### What It Checks
+
+- **Flesch-Kincaid Grade Level** of UI text (target: grade 6-8 for consumer apps, 8-12 for professional tools)
+- **Average sentence length** in descriptions and help text (target: < 20 words)
+- **Jargon detection** — flag technical terms in user-facing UI ("null", "exception", "deprecated", "payload")
+- **Passive voice** in instructions (prefer "Click Save" over "The save button should be clicked")
+- **Reading time** for onboarding text, help docs, and long-form content
+
+### Output
+
+```
+  Content Readability
+  ───────────────────
+
+  Scanned 47 user-facing text strings
+
+  Readability Grade: 9.2 (target: 6-8 for consumer apps)
+  Average Sentence Length: 18 words (target: < 20)
+  Passive Voice: 23% of instructions (target: < 10%)
+
+  Issues:
+  ┌────────────────────────────────────────────────────┐
+  │ [SHOULD] error.html:12 — "An unexpected exception  │
+  │   has occurred during the processing of your        │
+  │   request." (Grade 14, 15 words, passive voice)    │
+  │   → "Something went wrong. Please try again."      │
+  │                                                    │
+  │ [SHOULD] settings.tsx:45 — "Deprecated legacy      │
+  │   authentication provider" (jargon: deprecated,     │
+  │   legacy, authentication, provider)                │
+  │   → "Old sign-in method (no longer supported)"     │
+  └────────────────────────────────────────────────────┘
+```
+
+---
+
+## Inline Finding Suppression
+
+*Inspired by anthroos/claude-code-review-skill's false positive controls.*
+
+Allow developers to suppress specific findings when a violation is intentional.
+
+### Suppression Comments
+
+Add these comments to suppress a specific requirement on the next line or block:
+
+**HTML:**
+```html
+<!-- design-review-disable REQ-SPACE-001 — intentional 6px gap for visual alignment -->
+<div style="margin: 6px;">
+```
+
+**CSS:**
+```css
+/* design-review-disable REQ-TYPO-001 — 14px intentional for compact data table */
+.data-table { font-size: 14px; }
+```
+
+**JSX/TSX:**
+```jsx
+{/* design-review-disable REQ-A11Y-P-002 — contrast verified with client, brand requirement */}
+<p className="brand-muted">Brand tagline</p>
+```
+
+### How It Works
+
+1. During scan (Phase 3), check each line for `design-review-disable REQ-XXX-NNN` comments
+2. If found, skip that requirement for the next line/block
+3. Track all suppressions and report them in a separate section:
+
+```
+  Suppressed Findings (3)
+  ───────────────────────
+  REQ-SPACE-001 in header.html:12 — "intentional 6px gap for visual alignment"
+  REQ-TYPO-001 in style.css:45 — "14px intentional for compact data table"
+  REQ-A11Y-P-002 in Hero.tsx:8 — "contrast verified with client, brand requirement"
+
+  Note: Suppressed findings are excluded from the score.
+```
+
+### Suppression Rules
+
+- Suppressions MUST include a reason (the `—` explanation)
+- MUST-level accessibility findings show a warning even when suppressed:
+  *"This finding is suppressed but affects accessibility. Ensure the exemption is documented."*
+- `/design-review --no-suppress` ignores all suppression comments
+
+---
+
+## Design System Health Check
+
+*Inspired by Ultraship's pattern-analyzer and bundle-tracker.*
+
+Measure how well the project uses its own design system — are tokens actually being used? Is the component library consistent?
+
+### Trigger
+
+```
+/design-review --health
+```
+
+### What It Measures
+
+```
+  Design System Health
+  ────────────────────
+
+  Token Usage:
+  ┌──────────────────┬────────┬──────────┬────────┐
+  │ Token Type       │ Defined│ Used     │ Usage  │
+  ├──────────────────┼────────┼──────────┼────────┤
+  │ Colors           │ 12     │ 9 of 12  │ 75%    │
+  │   + 8 raw hex values not from tokens          │
+  │ Spacing          │ 8      │ 5 of 8   │ 63%    │
+  │   + 11 raw px values not from tokens          │
+  │ Typography       │ 6      │ 4 of 6   │ 67%    │
+  │   + 5 inline font-size values                 │
+  │ Border Radius    │ 3      │ 2 of 3   │ 67%    │
+  │   + 4 raw px values not from tokens           │
+  │ Shadows          │ 4      │ 3 of 4   │ 75%    │
+  └──────────────────┴────────┴──────────┴────────┘
+
+  Token Adoption: 69% (target: 90%+)
+  Raw Values Found: 28 (target: 0)
+  Design Debt Score: Medium
+
+  Top Offenders (most raw values):
+  1. style.css — 12 raw values
+  2. inline styles across 6 HTML files — 9 raw values
+  3. components/Card.tsx — 4 raw values
+  4. pages/dashboard.tsx — 3 raw values
+```
+
+---
+
+## Proactive Contextual Triggering
+
+*Inspired by Anthropic's pr-review-toolkit auto-triggering.*
+
+The skill should proactively suggest running when it detects relevant context:
+
+### Auto-Suggest Triggers
+
+| Context | Suggestion |
+|---------|-----------|
+| User just created/modified CSS or HTML files | "I noticed you changed UI files. Want me to run a quick design review on the changes? (`/design-review --diff`)" |
+| User is about to commit UI changes | "Before you commit — want a quick design check? (`/design-review --diff`)" |
+| User asks "how does it look?" or "is this good?" | Auto-trigger visual design review on recent changes |
+| User is building a new component | "Want me to review this component against the design specs? (`/design-review --spec components`)" |
+| User mentions "demo", "launch", "ship", "deploy" | "Want me to run a demo readiness check? (`/design-review --demo`)" |
+
+### How to Implement
+
+In the skill description (frontmatter), include trigger phrases:
+```yaml
+triggers:
+  - "review my design"
+  - "check my UI"
+  - "how does it look"
+  - "is this accessible"
+  - "design audit"
+  - "check accessibility"
+  - "review the frontend"
+  - "is this ready for demo"
+```
+
+---
+
+## Cross-Project Benchmarking
+
+*Inspired by Ultraship's compete-analyzer.*
+
+Compare design scores between your projects or across teams.
+
+### Trigger
+
+```
+/design-review --benchmark
+```
+
+### How It Works
+
+1. Read `.design-review-history.json` from the current project
+2. If the user has multiple projects with history files, show a comparison:
+
+```
+  Cross-Project Benchmark
+  ───────────────────────
+
+  ┌─────────────────────┬───────┬───────┬─────────────────┐
+  │ Project             │ Score │ Grade │ Trend           │
+  ├─────────────────────┼───────┼───────┼─────────────────┤
+  │ ramspy-dashboard    │ 86    │ B     │ +24 (3 weeks)   │
+  │ marketing-site      │ 91    │ A-    │ +8 (2 weeks)    │
+  │ mobile-app          │ 73    │ C     │ new             │
+  │ admin-panel         │ 68    │ D     │ -2 (1 week)     │
+  └─────────────────────┴───────┴───────┴─────────────────┘
+
+  Best: marketing-site (91/100)
+  Needs attention: admin-panel (68/100, declining)
+```
+
+3. Show which categories each project struggles with:
+
+```
+  Weakest Categories Across Projects:
+  1. Accessibility — avg 58/100 (3 of 4 projects below 70)
+  2. Performance UX — avg 65/100 (2 projects below 70)
+  3. Visual Consistency — avg 71/100
+```
