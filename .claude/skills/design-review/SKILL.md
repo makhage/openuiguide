@@ -34,7 +34,7 @@ Display this header immediately:
   OpenUI Guide — Design Review
   Your AI design team, on demand.
   
-  v1.0.0 | 275 requirements | 39 categories | 7 platforms
+  v1.0.0 | 329 requirements | 45 categories | 7 platforms
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -823,6 +823,13 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review` | Full interactive flow (Phase 1-5) |
 | `/design-review --fix` | Full review + auto-fix Priority 1 issues |
 | `/design-review --fix-all` | Full review + auto-fix all MUST violations |
+| `/design-review --diff` | Review only changed files since last commit |
+| `/design-review --diff main` | Review only changes vs. main branch |
+| `/design-review --pr` | Review current PR + post findings as PR comment |
+| `/design-review --pr 123` | Review PR #123 + post comments |
+| `/design-review --html` | Full review + save as HTML report |
+| `/design-review --strict` | Full review with confidence threshold 50 (show more) |
+| `/design-review --lenient` | Full review with confidence threshold 85 (less noise) |
 | `/design-review --score` | Quick scan, show score dashboard only |
 | `/design-review --spec accessibility` | Accessibility audit only |
 | `/design-review --spec visual` | Visual design review only |
@@ -859,3 +866,344 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 8. **Be educational, not critical.** Frame findings as learning opportunities.
 9. **Context matters.** A fleet dashboard has different density needs than a meditation app.
 10. **Show the score change after fixes.** Positive reinforcement drives adoption.
+
+---
+
+## Confidence Scoring System
+
+*Inspired by Anthropic's code-review plugin and anthroos/claude-code-review-skill.*
+
+Every finding MUST be assigned a **confidence score (0-100)** measuring how certain you are that the finding is a genuine issue and not a false positive.
+
+### Scoring Scale
+
+| Score | Meaning | Action |
+|-------|---------|--------|
+| 90-100 | Absolutely certain — clear violation with evidence | Always report |
+| 70-89 | Highly confident — strong evidence, real issue | Report (default threshold) |
+| 50-69 | Moderately confident — likely real but could be intentional | Report only in verbose mode |
+| 25-49 | Somewhat confident — might be a false positive | Suppress |
+| 0-24 | Low confidence — probably fine | Suppress |
+
+### Default Threshold: 70
+
+Only report findings with confidence >= 70. This dramatically reduces noise.
+
+### How to Score Confidence
+
+- **100:** Missing alt text on `<img>` with no `aria-label` → definitely a violation
+- **95:** `outline: none` with no replacement focus style → almost certainly wrong
+- **80:** Inline styles overriding CSS variables → probably unintentional, could be a quick fix
+- **60:** Card padding of `18px` instead of `16px` → might be intentional for visual balance
+- **40:** Dark-only theme with no light mode → might be a deliberate design choice
+- **20:** Button labeled "Go" → might be appropriate in context (search forms)
+
+### Adjusting Threshold
+
+Users can adjust via flags:
+- `/design-review --strict` → threshold 50 (show more findings)
+- `/design-review --lenient` → threshold 85 (show only high-confidence)
+- Default: 70
+
+---
+
+## Parallel Multi-Agent Architecture
+
+*Inspired by Anthropic's pr-review-toolkit (6 agents) and code-review (5 parallel Sonnet agents).*
+
+For **Full Review** mode, dispatch **5 specialized review agents** running in parallel, each responsible for one domain. This is faster and produces better results than a single agent reading all 45 specs.
+
+### Agent Dispatch
+
+```
+  Dispatching Review Agents
+  ─────────────────────────
+  Agent 1: Accessibility Auditor    → WCAG 2.2 specs (32 requirements)
+  Agent 2: Visual Design Reviewer   → Foundations specs (87 requirements)
+  Agent 3: Component Inspector      → Component specs (58 requirements)
+  Agent 4: Pattern Analyzer         → Pattern specs (103 requirements)
+  Agent 5: Platform Checker         → Platform-specific specs (49 requirements)
+  
+  Running in parallel...
+```
+
+### Each Agent's Process
+
+1. Load only its assigned spec files
+2. Scan all UI files against its requirements
+3. Score each finding (0-100 confidence)
+4. Filter findings below threshold (default 70)
+5. Return structured results: `{ findings: [...], positives: [...], score: N }`
+
+### Result Merging
+
+After all agents complete:
+1. Merge all findings into a single list
+2. De-duplicate overlapping findings (same file + same line from different agents)
+3. Sort by priority (confidence * impact weight)
+4. Compute overall and per-category scores
+5. Present the unified report
+
+### Agent Models
+
+- **Full review agents:** Use Sonnet for speed (5 agents in parallel)
+- **Confidence scoring:** Use Haiku for quick 0-100 scoring of each finding
+- **Summary generation:** Use the primary model for final report assembly
+
+---
+
+## Git-Diff Mode
+
+*Inspired by anthroos/claude-code-review-skill's git blame analysis.*
+
+When invoked with `--diff`, only review files that changed since the last commit, branch point, or PR.
+
+### Triggers
+
+| Command | Behavior |
+|---------|----------|
+| `/design-review --diff` | Review files changed since last commit |
+| `/design-review --diff main` | Review files changed vs. main branch |
+| `/design-review --diff PR` | Review files changed in current PR |
+
+### Process
+
+1. Run `git diff --name-only [target]` to get changed files
+2. Filter to UI-relevant files only (CSS, HTML, JSX, TSX, Vue, Svelte, etc.)
+3. For each changed file, run `git diff [target] -- [file]` to get the specific changes
+4. **Only flag issues in changed lines** — skip pre-existing issues
+5. Show a focused report for just the diff
+
+### Output Format
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Design Review — Changes Only
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Reviewing 3 changed files (vs. main branch)
+  
+  Modified: src/components/Header.tsx (+15 -3)
+  Modified: src/styles/global.css (+8 -2)
+  New:      src/components/Modal.tsx (+45)
+
+  Findings in changed code: 4 errors | 2 warnings
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+### Auto-Skip Logic
+
+Automatically skip review when:
+- No UI files were changed (only .py, .go, .rs, etc.)
+- Changes are documentation-only (.md files)
+- Changes are test-only (test files)
+- Changes are config-only (package.json, tsconfig, etc.)
+
+Show: `"No UI changes detected — skipping design review."`
+
+---
+
+## GitHub PR Integration
+
+*Inspired by Anthropic's code-review plugin's PR posting.*
+
+When invoked with `--pr`, post findings as a GitHub PR review comment.
+
+### Trigger
+
+```
+/design-review --pr 123
+/design-review --pr          (auto-detect current branch PR)
+```
+
+### Process
+
+1. Fetch PR details via `gh pr view`
+2. Get the diff via `gh pr diff`
+3. Run diff-mode review on changed files only
+4. Format findings as PR review comments with file:line references
+5. Post via `gh pr review --comment`
+
+### PR Comment Format
+
+```markdown
+## Design Review — 4 findings
+
+**Score impact:** This PR would change the design score from 78 → 74 (-4 pts)
+
+### Errors (must fix)
+
+**REQ-A11Y-P-002: Color contrast** (`src/styles/theme.css:42`)
+> New `--text-muted` value `#6b7280` on `#111827` background = 3.8:1 contrast.
+> Needs 4.5:1. Suggest: `#9ca3af` (4.6:1).
+> Confidence: 95/100
+
+### Warnings
+
+**REQ-SOPT-002: Proximity grouping** (`src/components/Form.tsx:28-35`)
+> Label-to-input gap (24px) equals inter-group gap (24px). Related elements
+> should be closer than unrelated groups.
+> Suggestion: Reduce label gap to 8px.
+> Confidence: 72/100
+```
+
+---
+
+## HTML Report Export
+
+*Inspired by huifer/skill-security-scan's HTML output.*
+
+When invoked with `--html`, generate a self-contained HTML report file.
+
+### Trigger
+
+```
+/design-review --html
+```
+
+### Output
+
+Generates `design-review-report.html` with:
+- Embedded CSS (no external dependencies)
+- Score dashboard with visual meters
+- Expandable finding sections
+- Color palette visualization (actual color swatches)
+- Spacing scale visualization
+- Before/after code diffs with syntax highlighting
+- Print-friendly layout
+- Timestamp and project metadata
+
+This is useful for:
+- Sharing with team members who don't use Claude Code
+- Including in project documentation
+- Client deliverables
+- Historical record of design quality
+
+---
+
+## Anti-Pattern Callouts
+
+*Inspired by Anthropic's frontend-design plugin and superpowers' HARD-GATE tags.*
+
+Throughout the review, explicitly call out known anti-patterns — things that are **always wrong** regardless of context. These go beyond MUST requirements to flag patterns that indicate fundamental UX mistakes.
+
+### Design Anti-Patterns (NEVER do these)
+
+```
+  ANTI-PATTERNS DETECTED
+  ──────────────────────
+
+  [AP-001] Placeholder as only label
+  Input fields using placeholder text as the sole label. Placeholders
+  disappear on focus — users forget what the field is for.
+  Found: 4 inputs across 2 files
+
+  [AP-002] Disabled submit with no explanation
+  Submit button is disabled but no visible text explains why.
+  Users don't know what to fix to enable it.
+  Found: compare.html:84
+
+  [AP-003] Color as sole differentiator
+  Status badges use only color (red/green/yellow) with no text or
+  icon — colorblind users can't distinguish them.
+  Found: index.html:45-52
+
+  [AP-004] Infinite scroll with no way back
+  Long list uses infinite scroll but no "Back to top" button and
+  no URL state — users who navigate away lose their position.
+  Found: trips.html
+
+  [AP-005] Modal on page load
+  A modal/dialog appears immediately on page load before the user
+  has seen the content. This is universally annoying.
+  Not found (good!)
+```
+
+### Complete Anti-Pattern Registry
+
+| ID | Anti-Pattern | Why It's Always Wrong |
+|----|-------------|----------------------|
+| AP-001 | Placeholder as only label | Disappears on focus, fails WCAG |
+| AP-002 | Disabled button, no explanation | Users can't figure out what to do |
+| AP-003 | Color as sole differentiator | ~8% of men are colorblind |
+| AP-004 | Infinite scroll, no URL state | Users lose position on back navigation |
+| AP-005 | Modal on page load | Blocks content before user engages |
+| AP-006 | Horizontal scroll on mobile | Layout broken, content inaccessible |
+| AP-007 | Auto-playing video with sound | Startling, violates WCAG 1.4.2 |
+| AP-008 | Text in images (non-logo) | Can't translate, resize, or screen-read |
+| AP-009 | "Click here" link text | Meaningless to screen readers |
+| AP-010 | Form that clears on error | User loses all input and has to restart |
+| AP-011 | Tiny close button on modal | Frustrating, fails touch target minimum |
+| AP-012 | Carousel as primary navigation | Users miss most slides, kills conversion |
+| AP-013 | Confirm shaming ("No thanks, I hate savings") | Dark pattern, erodes trust |
+| AP-014 | Select dropdown for <5 options | Radio buttons are faster for small lists |
+| AP-015 | Custom scrollbar that breaks native behavior | Breaks momentum scroll, accessibility |
+
+---
+
+## Aesthetic Direction Guidance
+
+*Inspired by Anthropic's frontend-design plugin's bold aesthetic framework.*
+
+When the user selects a visual personality in the discovery interview (Phase 1c, Question 4), apply these aesthetic guidelines throughout the review. Instead of just checking against rules, guide toward a **distinctive design identity**.
+
+### Aesthetic Directions
+
+**Clean & Minimal:**
+- Expect: generous whitespace (40-80px sections), limited color palette (3-5 colors), thin borders or none, system fonts or one elegant typeface
+- Flag: excessive shadows, gradients, decorative borders, more than 2 font families
+- Celebrate: restraint, precision in spacing, invisible grid alignment
+
+**Bold & Energetic:**
+- Expect: strong color contrasts, large CTAs, dynamic motion, oversized typography for impact
+- Flag: muted colors, timid button sizes, missing hover animations, generic layouts
+- Celebrate: confident color choices, prominent CTAs, energetic micro-interactions
+
+**Dark & Technical:**
+- Expect: dark backgrounds, monospace accents, high information density, subtle borders
+- Don't flag: dark-only theme, tighter spacing, higher density
+- Celebrate: well-crafted dark palette, readable text on dark backgrounds, code-like precision
+
+**Warm & Friendly:**
+- Expect: rounded corners (12px+), soft shadows, warm colors, generous padding, illustrations
+- Flag: sharp corners mixed with round, cold/clinical color choices, dense layouts
+- Celebrate: approachable typography, soft color transitions, inviting empty states
+
+**When reviewing, reference the aesthetic direction:**
+*"Your warm & friendly aesthetic calls for rounded corners — the 4px border-radius on these cards feels too sharp. Consider 12-16px for a softer feel that matches your personality."*
+
+---
+
+## CI/CD Integration
+
+For automated design review in pull request pipelines:
+
+### GitHub Actions Workflow
+
+```yaml
+name: Design Review
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.css'
+      - '**/*.scss'
+      - '**/*.jsx'
+      - '**/*.tsx'
+      - '**/*.vue'
+      - '**/*.svelte'
+
+jobs:
+  design-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run design review
+        run: |
+          claude "/design-review --diff ${{ github.event.pull_request.base.ref }} --pr ${{ github.event.pull_request.number }} --strict"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+This runs the design review on every PR that touches UI files and posts findings as PR comments.
