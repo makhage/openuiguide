@@ -28,15 +28,15 @@ Navigation reflects your IA — how content is organized:
 
 **Enforcement:** `MUST` | WCAG 2.2 SC 2.4.8, UX Best Practice
 **Platforms:** All
-**Detectable:** Yes — check for active/selected state on navigation items
+**Detectable:** Yes — check BOTH: (1) visual distinction (color, weight, indicator) on active nav item, AND (2) `aria-current="page"` attribute on the active link. Both checks are required — visual passes alone are insufficient.
 
 #### Why This Matters
-Users must always know where they are in your app. An active navigation indicator (highlighted tab, bold menu item, breadcrumb trail) prevents disorientation. Without it, users feel lost and backtrack unnecessarily.
+Users must always know where they are in your app. An active navigation indicator (highlighted tab, bold menu item, breadcrumb trail) prevents disorientation. Without it, users feel lost and backtrack unnecessarily. Screen reader users need `aria-current="page"` because they can't see visual styling differences.
 
 #### The Rule
 - The currently active navigation item MUST be visually distinct from inactive items
 - Active state should use at least 2 visual cues (color change + bold/weight, or color + icon fill change)
-- On web, use `aria-current="page"` for the current page link
+- On web, the active link MUST have `aria-current="page"` — this is a separate requirement from visual distinction
 - Breadcrumbs should show the current page as the last non-linked item
 
 #### Platform Notes

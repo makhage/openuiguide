@@ -175,7 +175,7 @@ Add `max-width: 65ch` (or 60-70ch) to the text container, not the page container
 
 **Enforcement:** `SHOULD` | Typography Best Practice
 **Platforms:** All
-**Detectable:** Heuristic — flag more than 3-4 distinct font weights
+**Detectable:** Heuristic — flag more than 4 distinct font weights. Four weights (400 regular, 500 medium, 600 semibold, 700 bold) is an accepted professional pattern.
 
 #### Why This Matters
 Weight is one of the primary tools for typographic hierarchy. But when an interface uses 6 different weights (thin, light, regular, medium, semibold, bold), none of them stand out clearly. Constraining to 2-3 weights creates decisive hierarchy.
@@ -280,12 +280,13 @@ Add `font-display: swap` to all `@font-face` declarations. Subset fonts. Preload
 
 **Enforcement:** `MUST` | WCAG 2.2 SC 1.3.1, Semantic HTML
 **Platforms:** All
-**Detectable:** Yes — check heading level order
+**Detectable:** Yes — first check: does the page have ANY heading elements? If zero, flag immediately. Then check heading order.
 
 #### Why This Matters
 Screen readers allow users to navigate by heading level. Skipping levels (h1 → h3) breaks this navigation and confuses the content structure. Headings must descend in order to create a logical outline.
 
 #### The Rule
+- Every page MUST have at least one heading element (h1). Flag pages with zero heading elements — the complete absence of headings is a critical document structure failure.
 - Heading levels MUST NOT skip (e.g., h1 → h3 without h2)
 - Each page should have exactly **one h1** (the page title)
 - Headings MUST be used for structure, not just for visual styling

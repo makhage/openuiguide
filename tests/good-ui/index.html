@@ -176,7 +176,7 @@
           <form class="feedback-form" action="/feedback" method="post">
             <div class="form-row">
               <div class="form-group">
-                <label for="feedback-category">Category</label>
+                <label for="feedback-category">Category <span aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
                 <select id="feedback-category" class="select-input" required>
                   <option value="">Select a category</option>
                   <option value="bug">Bug Report</option>
@@ -195,8 +195,9 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="feedback-message">Your feedback</label>
+              <label for="feedback-message">Your feedback <span aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
               <textarea id="feedback-message" class="text-input textarea" rows="4" required
+                aria-describedby="feedback-hint"
                 placeholder="Describe your feedback in detail..."></textarea>
               <p class="form-hint" id="feedback-hint">Minimum 20 characters. Be as specific as possible.</p>
             </div>

@@ -33,7 +33,7 @@ Perceivability rules help:
 
 **Enforcement:** `MUST` | WCAG 2.2 SC 1.1.1 (Level A)
 **Platforms:** All
-**Detectable:** Yes — check for missing alt attributes on images
+**Detectable:** Yes — check for missing alt attributes on images. Also flag `alt=""` on images whose filename or context suggests informative content (avatar, chart, graph, diagram, profile, logo, screenshot). Empty alt is only appropriate for truly decorative images (borders, spacers, background patterns).
 
 #### Why This Matters
 Screen readers announce images by reading their alt text. Without it, a blind user encounters an image-shaped void in the content — or worse, hears the file name ("DSC_0847.jpg"). This is the single most common accessibility failure found in audits.
@@ -153,6 +153,9 @@ Interactive components (buttons, inputs, toggles) and meaningful graphical objec
 | Compose | Check `OutlinedTextField` border color, `Icon` tint against surface color |
 | Flutter | Check `InputDecoration.border` color, `Icon.color` against scaffold/container color |
 
+#### Detection Guidance
+Borders on UI components that are also identified by other visual means (background color, shadow/elevation, label proximity, standard form field rendering) are exempt. The 3:1 rule applies only when the border is the sole visual indicator of the component.
+
 #### Common Mistakes
 - Input fields with very light gray borders (#ddd on #fff = 1.5:1 — fails)
 - Icons using the same light gray for both active and inactive states
@@ -189,7 +192,7 @@ Approximately 8% of men and 0.5% of women have some form of color vision deficie
 - Status indicators (online/offline) shown only as green/red dots
 - Required fields marked only by red asterisks
 - Charts/graphs using color-only legend differentiation
-- Links in body text distinguishable only by color (no underline)
+- Links in **flowing body text** distinguishable only by color (no underline). Note: standalone action links, navigation links, and links in dedicated UI regions (table action columns, nav bars, footers) are identified by context and placement, not just color.
 
 #### How to Fix
 For every use of meaningful color, add a redundant indicator: icon, text label, pattern, underline, or shape. Test by viewing your interface in grayscale.

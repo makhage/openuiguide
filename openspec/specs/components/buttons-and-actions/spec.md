@@ -62,11 +62,11 @@ Buttons without state feedback feel broken. Users click and nothing happens visu
 
 #### The Rule
 Every button MUST have visually distinct styles for:
-- **Default** — resting state
-- **Hover** — pointer is over the button (desktop)
-- **Focus** — keyboard focus indicator (see REQ-A11Y-O-003)
-- **Active/Pressed** — button is being clicked/tapped
-- **Disabled** — button is non-interactive (reduced opacity, muted color)
+- **Default** — resting state (MUST)
+- **Hover** — pointer is over the button, desktop (MUST)
+- **Focus** — keyboard focus indicator, see REQ-A11Y-O-003 (MUST)
+- **Active/Pressed** — button is being clicked/tapped (SHOULD — browser defaults satisfy this for standard buttons)
+- **Disabled** — button is non-interactive, reduced opacity, muted color (SHOULD — only applies when disabled buttons exist in the UI)
 - **Loading** (optional) — action is in progress (spinner or text change)
 
 #### Platform Notes
@@ -90,6 +90,9 @@ Every button MUST have visually distinct styles for:
 **Enforcement:** `MUST` | WCAG 2.2 SC 2.4.6, UX Best Practice
 **Platforms:** All
 **Detectable:** Heuristic — flag generic labels like "Submit", "Click here", "OK"
+
+#### Detection Guidance
+Check for exact matches against single-word generic labels: 'Submit', 'OK', 'Yes', 'No', 'Send', 'Clear', 'Go', 'Click here'. Do NOT flag multi-word labels that include these words but add context: 'Send Feedback', 'Clear Form', 'Submit Order' are all descriptive and acceptable.
 
 #### Why This Matters
 "Submit" tells users nothing about what happens next. "Create account" tells them everything. Specific labels reduce anxiety, increase confidence, and help screen reader users who navigate by button list.

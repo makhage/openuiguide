@@ -43,6 +43,8 @@ Some users experience dizziness, nausea, or seizures from animated content. Both
 - Essential motion (progress indicators, meaningful state changes) can be simplified rather than removed
 - Replace sliding/zooming transitions with instant or fade transitions
 - Disable parallax scrolling, auto-playing animations, and continuous motion
+- **Include the `prefers-reduced-motion` media query even when current animations are minimal** — it serves as defensive CSS for future additions, third-party content, and browser-default animations
+- Detection: flag ANY CSS file that contains `transition` or `animation` properties but has no `prefers-reduced-motion` media query
 
 #### Platform Notes
 | Platform | Implementation Detail |
