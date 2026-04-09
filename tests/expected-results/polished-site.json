@@ -1,0 +1,47 @@
+{
+  "test_name": "polished-site-landing",
+  "description": "Apple/Stripe-quality SaaS landing page. Should score 90-100 with near-zero findings.",
+  "expected_score_range": { "min": 90, "max": 100 },
+  "expected_grade": ["A", "A-"],
+  "expected_errors": { "max": 0 },
+  "expected_warnings": { "max": 3 },
+  "expected_suggestions": { "max": 3 },
+  "should_NOT_flag": [
+    "ANY MUST-level violation (zero tolerance for false positives on a polished site)",
+    "REQ-TYPO-001 — body text is 16px",
+    "REQ-A11Y-O-008 — skip nav present",
+    "REQ-WEB-001 — full semantic HTML (header, nav, main, footer)",
+    "REQ-A11Y-O-003 — focus-visible styles present",
+    "REQ-MOTION-001 — prefers-reduced-motion present",
+    "REQ-DARK-001 — prefers-color-scheme present",
+    "REQ-FORM-001 — all inputs labeled",
+    "REQ-TYPO-008 — proper heading hierarchy",
+    "REQ-NAV-001 — aria-current on active nav",
+    "REQ-SPACE-001 — consistent spacing scale",
+    "REQ-VCON-001 — consistent border-radius",
+    "REQ-COLOR-002 — semantic color tokens",
+    "REQ-MICRO-001 — button press feedback",
+    "REQ-MICRO-002 — hover transitions",
+    "REQ-BTN-002 — all button states present",
+    "REQ-BTN-003 — descriptive button labels",
+    "REQ-RESP-001 — viewport meta present",
+    "REQ-A11Y-P-002 — all contrast ratios pass 4.5:1"
+  ],
+  "acceptable_findings": [
+    "Minor CONSIDER-level suggestions about polish",
+    "Optional enhancements (stagger animation, skeleton screens)",
+    "Things that require user content decisions (og:image, favicon)"
+  ],
+  "anti_patterns_expected": 0,
+  "enhance_mode_test": {
+    "description": "When running --enhance on this site, it should find very little to improve",
+    "expected_response": "Site is already well-designed. Minor polish opportunities only.",
+    "should_NOT_suggest": [
+      "Changing fonts (already distinctive)",
+      "Changing colors (already cohesive)",
+      "Changing spacing (already on scale)",
+      "Adding animations (already has motion system)"
+    ]
+  },
+  "calibration_purpose": "If this site scores below 90 or gets ANY MUST errors, the review tool has a false positive problem. If --enhance suggests major changes, the enhance mode is too aggressive."
+}
