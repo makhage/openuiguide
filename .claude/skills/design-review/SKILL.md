@@ -95,6 +95,12 @@ This skill uses a modular file structure. Read the relevant files as needed:
 - `.claude/skills/design-review/reference/aesthetics.md` — Aesthetic direction guidelines per personality
 - `.claude/skills/design-review/reference/design-enhancement.md` — Design generation and enhancement system
 - `.claude/skills/design-review/reference/visual-effects-library.md` — Advanced motion, graphic effects, and eye-catching CSS patterns
+- `.claude/skills/design-review/reference/layout-patterns.md` — Bento grids, asymmetric layouts, masonry, magazine, split-screen, full-bleed
+- `.claude/skills/design-review/reference/image-treatments.md` — Duotone, clip-path masks, parallax, hover zoom, gradient overlays
+- `.claude/skills/design-review/reference/svg-graphics.md` — Section dividers, decorative blobs, animated icons, geometric patterns
+- `.claude/skills/design-review/reference/component-variants.md` — 5 hero styles, 4 card designs, 3 pricing layouts, 4 testimonial formats, 3 footers
+- `.claude/skills/design-review/reference/form-experience.md` — Floating labels, validation animations, multi-step wizard, password strength
+- `.claude/skills/design-review/reference/navigation-polish.md` — Shrinking header, scroll spy, mobile drawer, mega menu, breadcrumbs, tabs
 
 ### Mode Files
 - `.claude/skills/design-review/modes/init.md` — Config wizard and `.designreviewrc.json` format
@@ -951,6 +957,12 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --enhance colors` | Improve color system, fix contrast, add dark mode |
 | `/design-review --enhance typography` | Choose distinctive fonts, establish type scale |
 | `/design-review --enhance spacing` | Normalize spacing to a consistent scale |
+| `/design-review --enhance layout` | Upgrade layout (bento grid, asymmetric, masonry, split-screen) |
+| `/design-review --enhance images` | Add image treatments (duotone, masks, parallax, hover zoom) |
+| `/design-review --enhance graphics` | Add SVG decorations (dividers, blobs, patterns, animated icons) |
+| `/design-review --enhance components` | Upgrade component designs (pick hero/card/pricing/testimonial variants) |
+| `/design-review --enhance forms` | Polish forms (floating labels, validation animation, wizard, glow) |
+| `/design-review --enhance nav` | Upgrade navigation (shrinking header, scroll spy, drawer, mega menu) |
 
 ---
 
