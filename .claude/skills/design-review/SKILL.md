@@ -130,7 +130,7 @@ Present the detection results:
 
 ### 1c. Design Discovery Interview
 
-Before reviewing, conduct a brief **design intake interview** — like a design agency's discovery call. This context shapes how strictly rules are applied and which findings matter most. Use **AskUserQuestion** for each question.
+Before reviewing, conduct a brief **design intake interview** — like a design agency's discovery call. This context shapes how strictly rules are applied and which findings matter most. Present each question as a numbered list and wait for the user's reply.
 
 **Question 1:** "What type of product is this?"
 
@@ -800,7 +800,7 @@ After fixes are applied, show a prominent before/after:
 
 ### 6d. Offer Next Round
 
-Use **AskUserQuestion** again:
+Ask the user directly (numbered list, wait for reply):
 
 **Question:** "Sprint complete! Score: 62 → 78. What next?"
 
@@ -935,7 +935,7 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 
 ## Important Guidelines for Reviewers
 
-1. **Use AskUserQuestion at decision points.** Don't assume what the user wants — present options at each phase transition.
+1. **Ask the user at decision points (numbered list, wait for reply).** Don't assume what the user wants — present options at each phase transition.
 2. **Never override creative choices without asking.** If a developer uses a non-standard color palette, explain the principle but respect their intent.
 3. **Always cite the requirement ID** so developers can look up the full rationale in the spec files.
 4. **Group cross-file findings.** If 6 files all miss the same thing, show it once with a file list.
