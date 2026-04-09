@@ -1,19 +1,29 @@
 ---
 name: design-review
 description: >
-  Runs a comprehensive UI/UX design review against any project's code.
-  Checks accessibility (WCAG 2.2), typography, color, spacing, visual hierarchy,
-  motion, component patterns, responsive design, dark mode, and platform conventions.
+  Two modes: (1) REVIEW — audits UI code against 329 design requirements covering
+  accessibility (WCAG 2.2), typography, color, spacing, visual hierarchy, motion,
+  components, responsive design, dark mode, and platform conventions.
+  (2) REDESIGN — generates distinctive, production-grade UI improvements with bold
+  typography, unique color palettes, eye-catching animations, and professional polish.
   Covers Web (HTML/CSS/JS/React/Vue/Svelte), iOS (SwiftUI), Android (Compose),
   Desktop (Electron/Tauri), TV (tvOS/Android TV), Wearable (watchOS/Wear OS),
   and cross-platform (Flutter, React Native).
-  Use when the user asks to review, audit, check, or improve their UI, UX,
-  design, accessibility, styling, or layout.
+  Use when the user asks to review, audit, improve, redesign, enhance, or polish
+  their UI, UX, design, accessibility, styling, animations, or layout.
 ---
 
-# Design Review Skill
+# Design Review & Enhancement Skill
 
-You are a professional UI/UX design reviewer. When invoked, you perform a comprehensive, interactive design analysis of the user's code using the OpenUI Guide specification repository.
+This skill has two modes:
+
+**REVIEW MODE** (default) — You are a design reviewer. You audit the project's UI against 329 requirements and produce a report with findings. You do NOT modify files during review. Triggered by: `/design-review`, `/design-review --score`, `/design-review --spec X`, etc.
+
+**ENHANCE MODE** — You are a design partner. You actively improve the visual quality of the UI by generating better typography, colors, animations, and spacing. You DO modify files, but only after showing a plan and getting confirmation. Triggered by: `/design-review --redesign`, `/design-review --enhance`, `/design-review --enhance animations`, etc.
+
+When in ENHANCE MODE, read `.claude/skills/design-review/reference/design-enhancement.md` for the full design generation system. Follow its phases step by step.
+
+When in REVIEW MODE (the default), follow the phases below.
 
 ## Philosophy
 
@@ -83,6 +93,7 @@ This skill uses a modular file structure. Read the relevant files as needed:
 ### Reference Files
 - `.claude/skills/design-review/reference/anti-patterns.md` — 15 anti-patterns that are always wrong
 - `.claude/skills/design-review/reference/aesthetics.md` — Aesthetic direction guidelines per personality
+- `.claude/skills/design-review/reference/design-enhancement.md` — Design generation and enhancement system
 
 ### Mode Files
 - `.claude/skills/design-review/modes/init.md` — Config wizard and `.designreviewrc.json` format
@@ -930,6 +941,14 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --benchmark` | Compare scores across your projects |
 | `/design-review --init` | Setup wizard — saves project config to `.designreviewrc.json` |
 | `/design-review --no-suppress` | Ignore all inline suppression comments |
+| | |
+| **Design Enhancement Mode** | |
+| `/design-review --redesign` | Full redesign with new visual identity (bold, distinctive) |
+| `/design-review --enhance` | Polish and elevate current design (keep identity, improve quality) |
+| `/design-review --enhance animations` | Add/improve motion and micro-interactions only |
+| `/design-review --enhance colors` | Improve color system, fix contrast, add dark mode |
+| `/design-review --enhance typography` | Choose distinctive fonts, establish type scale |
+| `/design-review --enhance spacing` | Normalize spacing to a consistent scale |
 
 ---
 
