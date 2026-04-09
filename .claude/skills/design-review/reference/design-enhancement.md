@@ -301,6 +301,18 @@ Only normalize spacing:
 - Fix proximity grouping (related elements closer)
 - Add section breathing room
 
+### `/design-review --enhance effects`
+Add eye-catching visual effects. Read `.claude/skills/design-review/reference/visual-effects-library.md` for the full pattern library. Choose effects based on the site's personality:
+- **Hero:** Gradient text animation, animated mesh background, floating orbs, typewriter heading, counter roll-up
+- **Scroll:** Fade-in-up reveals, staggered grid entrance, slide-in from sides, scale-up reveals
+- **Cards:** 3D tilt on hover, glassmorphism, glow effect, gradient border animation
+- **Buttons:** Ripple effect, animated gradient, icon slide, magnetic hover
+- **Background:** Noise texture overlay, dot grid pattern, gradient blur orbs, mesh gradient
+- **Text:** Highlight/marker draw, split character reveal, underline draw on hover
+- **Page-level:** Scroll progress bar, custom cursor follower, page load choreography
+
+Always match effects to the site's personality. Always include `prefers-reduced-motion: reduce` for accessibility. Pick 3-5 signature effects — don't add everything.
+
 ---
 
 ## Anti-Patterns for Generated Designs

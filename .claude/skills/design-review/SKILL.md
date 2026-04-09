@@ -94,6 +94,7 @@ This skill uses a modular file structure. Read the relevant files as needed:
 - `.claude/skills/design-review/reference/anti-patterns.md` — 15 anti-patterns that are always wrong
 - `.claude/skills/design-review/reference/aesthetics.md` — Aesthetic direction guidelines per personality
 - `.claude/skills/design-review/reference/design-enhancement.md` — Design generation and enhancement system
+- `.claude/skills/design-review/reference/visual-effects-library.md` — Advanced motion, graphic effects, and eye-catching CSS patterns
 
 ### Mode Files
 - `.claude/skills/design-review/modes/init.md` — Config wizard and `.designreviewrc.json` format
@@ -946,6 +947,7 @@ These shortcuts skip the interactive flow and go directly to the specified mode:
 | `/design-review --redesign` | Full redesign with new visual identity (bold, distinctive) |
 | `/design-review --enhance` | Polish and elevate current design (keep identity, improve quality) |
 | `/design-review --enhance animations` | Add/improve motion and micro-interactions only |
+| `/design-review --enhance effects` | Add eye-catching visual effects (glows, gradients, 3D, parallax, orbs) |
 | `/design-review --enhance colors` | Improve color system, fix contrast, add dark mode |
 | `/design-review --enhance typography` | Choose distinctive fonts, establish type scale |
 | `/design-review --enhance spacing` | Normalize spacing to a consistent scale |
