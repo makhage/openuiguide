@@ -1,0 +1,108 @@
+{
+  "test_name": "bad-ui-dashboard",
+  "description": "Poorly-made dashboard with 22 intentional issues. Should score 30-45.",
+  "expected_score_range": { "min": 25, "max": 50 },
+  "expected_grade": ["D", "F"],
+  "expected_errors": { "min": 8, "max": 15 },
+  "expected_warnings": { "min": 5, "max": 12 },
+  "MUST_catch": [
+    {
+      "id": "REQ-A11Y-U-001",
+      "issue": "No lang attribute on <html>",
+      "file": "index.html",
+      "line_approx": 1
+    },
+    {
+      "id": "REQ-A11Y-O-008",
+      "issue": "No skip navigation link",
+      "file": "index.html"
+    },
+    {
+      "id": "REQ-WEB-001",
+      "issue": "No semantic landmarks (main, header, footer)",
+      "file": "index.html"
+    },
+    {
+      "id": "REQ-TYPO-008",
+      "issue": "No heading elements (h1-h6) used",
+      "file": "index.html"
+    },
+    {
+      "id": "REQ-FORM-001",
+      "issue": "Form inputs use placeholder only, no labels",
+      "file": "index.html"
+    },
+    {
+      "id": "REQ-A11Y-P-001",
+      "issue": "Meaningful images have empty alt text",
+      "file": "index.html"
+    },
+    {
+      "id": "REQ-LIST-002",
+      "issue": "Table missing caption and scope on th",
+      "file": "index.html"
+    },
+    {
+      "id": "REQ-BTN-005",
+      "issue": "Links used as buttons (a href=# onclick=)",
+      "file": "index.html"
+    },
+    {
+      "id": "REQ-A11Y-P-002",
+      "issue": "Muted text contrast too low (~2.2:1)",
+      "file": "styles.css",
+      "line_approx": 8
+    },
+    {
+      "id": "REQ-TYPO-001",
+      "issue": "Body font-size is 13px (below 16px minimum)",
+      "file": "styles.css"
+    },
+    {
+      "id": "REQ-A11Y-O-003 / REQ-WEB-004",
+      "issue": "outline: none with no replacement focus styles",
+      "file": "styles.css"
+    },
+    {
+      "id": "REQ-MOTION-001",
+      "issue": "No prefers-reduced-motion media query",
+      "file": "styles.css"
+    }
+  ],
+  "SHOULD_catch": [
+    {
+      "id": "REQ-BTN-003",
+      "issue": "Generic button labels (Submit, OK)"
+    },
+    {
+      "id": "REQ-NAV-001",
+      "issue": "No aria-current on active nav link"
+    },
+    {
+      "id": "REQ-DARK-001",
+      "issue": "Dark-only theme, no prefers-color-scheme"
+    },
+    {
+      "id": "REQ-SPACE-001 / REQ-SOPT-001",
+      "issue": "Arbitrary spacing values not on a grid"
+    },
+    {
+      "id": "REQ-TYPO-002",
+      "issue": "Too many font-size values (9+)"
+    },
+    {
+      "id": "REQ-VCON-001",
+      "issue": "Inconsistent border-radius values"
+    },
+    {
+      "id": "REQ-MICRO-002",
+      "issue": "No hover transitions on buttons"
+    }
+  ],
+  "anti_patterns_expected": [
+    "AP-001: placeholder as only label",
+    "AP-003: color as sole differentiator (status dots)",
+    "AP-009: links used as buttons"
+  ],
+  "false_negative_note": "If the tool MISSES any item in MUST_catch, that's a false negative and indicates the review is too lenient"
+}

@@ -1,0 +1,26 @@
+{
+  "test_name": "good-ui-dashboard",
+  "description": "Well-made dashboard following all best practices. Should score 85-95.",
+  "expected_score_range": { "min": 85, "max": 100 },
+  "expected_grade": ["A", "A-", "B+"],
+  "expected_errors": { "max": 2 },
+  "expected_warnings": { "max": 5 },
+  "should_NOT_flag": [
+    "REQ-TYPO-001 — body text is 16px, should pass",
+    "REQ-A11Y-O-008 — skip nav is present, should pass",
+    "REQ-WEB-001 — semantic HTML is correct, should pass",
+    "REQ-A11Y-O-003 — focus-visible styles exist, should pass",
+    "REQ-MOTION-001 — prefers-reduced-motion query exists, should pass",
+    "REQ-DARK-001 — prefers-color-scheme query exists, should pass",
+    "REQ-FORM-001 — all inputs have labels, should pass",
+    "REQ-A11Y-P-001 — all images have alt text, should pass",
+    "REQ-TYPO-008 — heading hierarchy is correct, should pass",
+    "REQ-LIST-002 — tables have caption and scope, should pass"
+  ],
+  "should_flag": [
+    "May flag minor SHOULD/CONSIDER items — that's fine",
+    "Should NOT flag any MUST violations"
+  ],
+  "anti_patterns_expected": 0,
+  "false_positive_tolerance": "Any MUST violation flagged on this page is a FALSE POSITIVE and indicates a bug in the review tool"
+}

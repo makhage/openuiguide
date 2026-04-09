@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Analytics dashboard for tracking key business metrics and performance indicators.">
+  <title>Analytics Dashboard - Acme Corp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div class="layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="sidebar-brand">
+        <img src="logo.svg" alt="Acme Corp logo" width="32" height="32">
+        <span class="brand-name">Acme Corp</span>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list" role="list">
+          <li>
+            <a href="/dashboard" class="nav-link nav-link--active" aria-current="page">
+              <svg class="nav-icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#icon-dashboard"></use></svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="/reports" class="nav-link">
+              <svg class="nav-icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#icon-reports"></use></svg>
+              Reports
+            </a>
+          </li>
+          <li>
+            <a href="/customers" class="nav-link">
+              <svg class="nav-icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#icon-customers"></use></svg>
+              Customers
+            </a>
+          </li>
+          <li>
+            <a href="/settings" class="nav-link">
+              <svg class="nav-icon" width="20" height="20" aria-hidden="true" focusable="false"><use href="#icon-settings"></use></svg>
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <!-- Top Header -->
+      <header class="top-header">
+        <h1 class="page-title">Dashboard</h1>
+        <div class="header-actions">
+          <label for="date-range" class="visually-hidden">Date range</label>
+          <select id="date-range" class="select-input">
+            <option value="7d">Last 7 days</option>
+            <option value="30d" selected>Last 30 days</option>
+            <option value="90d">Last 90 days</option>
+            <option value="1y">Last year</option>
+          </select>
+          <button type="button" class="btn btn--primary">Export Report</button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main id="main">
+        <!-- Stats Overview -->
+        <section aria-labelledby="stats-heading">
+          <h2 id="stats-heading" class="visually-hidden">Key Performance Metrics</h2>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <h3 class="stat-label">Total Revenue</h3>
+              <p class="stat-value">$48,295</p>
+              <p class="stat-change stat-change--positive">
+                <span aria-hidden="true">+</span>12.5% from last period
+              </p>
+            </article>
+            <article class="stat-card">
+              <h3 class="stat-label">New Customers</h3>
+              <p class="stat-value">1,243</p>
+              <p class="stat-change stat-change--positive">
+                <span aria-hidden="true">+</span>8.2% from last period
+              </p>
+            </article>
+            <article class="stat-card">
+              <h3 class="stat-label">Active Users</h3>
+              <p class="stat-value">3,847</p>
+              <p class="stat-change stat-change--negative">
+                <span aria-hidden="true">-</span>2.1% from last period
+              </p>
+            </article>
+            <article class="stat-card">
+              <h3 class="stat-label">Conversion Rate</h3>
+              <p class="stat-value">4.6%</p>
+              <p class="stat-change stat-change--positive">
+                <span aria-hidden="true">+</span>0.8% from last period
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Data Table Section -->
+        <section class="card" aria-labelledby="orders-heading">
+          <div class="card-header">
+            <h2 id="orders-heading">Recent Orders</h2>
+            <div class="table-controls">
+              <label for="search-orders">Search orders</label>
+              <input type="search" id="search-orders" class="text-input" placeholder="Search by name or ID...">
+            </div>
+          </div>
+          <div class="table-wrapper" tabindex="0" role="region" aria-labelledby="orders-heading">
+            <table class="data-table">
+              <caption class="visually-hidden">Recent customer orders with status and amounts</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Order ID</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col"><span class="visually-hidden">Actions</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#ORD-7291</td>
+                  <td>Elena Rodriguez</td>
+                  <td><time datetime="2026-04-08">Apr 8, 2026</time></td>
+                  <td>$249.00</td>
+                  <td><span class="badge badge--success">Completed</span></td>
+                  <td><a href="/orders/7291" class="table-action">View details</a></td>
+                </tr>
+                <tr>
+                  <td>#ORD-7290</td>
+                  <td>Marcus Chen</td>
+                  <td><time datetime="2026-04-08">Apr 8, 2026</time></td>
+                  <td>$1,420.00</td>
+                  <td><span class="badge badge--warning">Processing</span></td>
+                  <td><a href="/orders/7290" class="table-action">View details</a></td>
+                </tr>
+                <tr>
+                  <td>#ORD-7289</td>
+                  <td>Sarah Okonkwo</td>
+                  <td><time datetime="2026-04-07">Apr 7, 2026</time></td>
+                  <td>$89.50</td>
+                  <td><span class="badge badge--success">Completed</span></td>
+                  <td><a href="/orders/7289" class="table-action">View details</a></td>
+                </tr>
+                <tr>
+                  <td>#ORD-7288</td>
+                  <td>James Whitfield</td>
+                  <td><time datetime="2026-04-07">Apr 7, 2026</time></td>
+                  <td>$562.00</td>
+                  <td><span class="badge badge--error">Cancelled</span></td>
+                  <td><a href="/orders/7288" class="table-action">View details</a></td>
+                </tr>
+                <tr>
+                  <td>#ORD-7287</td>
+                  <td>Priya Sharma</td>
+                  <td><time datetime="2026-04-06">Apr 6, 2026</time></td>
+                  <td>$178.25</td>
+                  <td><span class="badge badge--success">Completed</span></td>
+                  <td><a href="/orders/7287" class="table-action">View details</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="card" aria-labelledby="feedback-heading">
+          <div class="card-header">
+            <h2 id="feedback-heading">Quick Feedback</h2>
+          </div>
+          <form class="feedback-form" action="/feedback" method="post">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="feedback-category">Category</label>
+                <select id="feedback-category" class="select-input" required>
+                  <option value="">Select a category</option>
+                  <option value="bug">Bug Report</option>
+                  <option value="feature">Feature Request</option>
+                  <option value="improvement">Improvement</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="feedback-priority">Priority</label>
+                <select id="feedback-priority" class="select-input">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="feedback-message">Your feedback</label>
+              <textarea id="feedback-message" class="text-input textarea" rows="4" required
+                placeholder="Describe your feedback in detail..."></textarea>
+              <p class="form-hint" id="feedback-hint">Minimum 20 characters. Be as specific as possible.</p>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Send Feedback</button>
+              <button type="reset" class="btn btn--secondary">Clear Form</button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>&copy; 2026 Acme Corp. All rights reserved.</p>
+        <nav aria-label="Footer navigation">
+          <ul class="footer-links" role="list">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
