@@ -1,25 +1,26 @@
 ---
-name: design-review
+name: dr
 description: >
   Two modes: (1) REVIEW — audits UI code against 329 design requirements covering
   accessibility (WCAG 2.2), typography, color, spacing, visual hierarchy, motion,
   components, responsive design, dark mode, and platform conventions.
-  (2) REDESIGN — generates distinctive, production-grade UI improvements with bold
+  (2) ENHANCE — generates distinctive, production-grade UI improvements with bold
   typography, unique color palettes, eye-catching animations, and professional polish.
   Covers Web (HTML/CSS/JS/React/Vue/Svelte), iOS (SwiftUI), Android (Compose),
   Desktop (Electron/Tauri), TV (tvOS/Android TV), Wearable (watchOS/Wear OS),
   and cross-platform (Flutter, React Native).
   Use when the user asks to review, audit, improve, redesign, enhance, or polish
   their UI, UX, design, accessibility, styling, animations, or layout.
+  Aliases: /dr, /design-review, /ui-review
 ---
 
 # Design Review & Enhancement Skill
 
 This skill has two modes:
 
-**REVIEW MODE** (default) — You are a design reviewer. You audit the project's UI against 329 requirements and produce a report with findings. You do NOT modify files during review. Triggered by: `/design-review`, `/design-review --score`, `/design-review --spec X`, etc.
+**REVIEW MODE** (default) — You are a design reviewer. You audit the project's UI against 329 requirements and produce a report with findings. You do NOT modify files during review. Triggered by: `/dr`, `/dr score`, `/dr a11y`, `/dr diff`, etc.
 
-**ENHANCE MODE** — You are a design partner. You actively improve the visual quality of the UI by generating better typography, colors, animations, and spacing. You DO modify files, but only after showing a plan and getting confirmation. Triggered by: `/design-review --redesign`, `/design-review --enhance`, `/design-review --enhance animations`, etc.
+**ENHANCE MODE** — You are a design partner. You actively improve the visual quality of the UI by generating better typography, colors, animations, and spacing. You DO modify files, but only after showing a plan and getting confirmation. Triggered by: `/dr enhance`, `/dr redesign`, `/dr enhance animations`, etc.
 
 When in ENHANCE MODE, read `.claude/skills/design-review/reference/design-enhancement.md` for the full design generation system. Follow its phases step by step.
 
@@ -906,63 +907,38 @@ When invoked in a project that already has a `design-review.md` file:
 
 ## Interaction Shortcuts
 
-These shortcuts skip the interactive flow and go directly to the specified mode:
+These shortcuts skip the interactive flow. All commands also work with `/design-review` as an alias.
 
-| Command | Behavior |
-|---------|----------|
-| `/design-review` | Full interactive flow (Phase 1-5) |
-| `/design-review --fix` | Full review + propose fixes for Priority 1 issues (shows plan, waits for approval) |
-| `/design-review --fix-all` | Full review + propose fixes for all MUST violations (batched, requires confirmation) |
-| `/design-review --diff` | Review only changed files since last commit |
-| `/design-review --diff main` | Review only changes vs. main branch |
-| `/design-review --pr` | Review current PR + post findings as PR comment |
-| `/design-review --pr 123` | Review PR #123 + post comments |
-| `/design-review --html` | Full review + save as HTML report |
-| `/design-review --strict` | Full review with confidence threshold 50 (show more) |
-| `/design-review --lenient` | Full review with confidence threshold 85 (less noise) |
-| `/design-review --score` | Quick scan, show score dashboard only |
-| `/design-review --spec accessibility` | Accessibility audit only |
-| `/design-review --spec visual` | Visual design review only |
-| `/design-review --spec visual-polish` | Text overlap + color harmony + spacing optimization |
-| `/design-review --spec colors` | Color scheme analysis (harmony, saturation, dual-purpose) |
-| `/design-review --spec animations` | Motion + micro-interactions review |
-| `/design-review --spec cta` | CTA placement, copy, prominence, conversion patterns |
-| `/design-review --spec dataviz` | Chart/graph accessibility and best practices |
-| `/design-review --spec copy` | UX writing, microcopy, and content quality |
-| `/design-review --spec gestures` | Touch gesture patterns (mobile/tablet) |
-| `/design-review --spec i18n` | Internationalization readiness |
-| `/design-review --spec consistency` | Visual consistency (radius, shadows, tokens) |
-| `/design-review --spec security` | Security & trust UX (auth, privacy, data masking) |
-| `/design-review --spec performance` | Performance UX (CWV, images, fonts, rendering) |
-| `/design-review --spec cognitive` | Cognitive load (complexity, choices, progressive disclosure) |
-| `/design-review --spec ai` | AI interface patterns (disclosure, confidence, fallbacks) |
-| `/design-review --spec search` | Search & filtering UX |
-| `/design-review --spec notifications` | Notification & communication patterns |
-| `/design-review --spec readability` | Content readability (Flesch-Kincaid, jargon, passive voice) |
-| `/design-review --spec components` | Component review only |
-| `/design-review --save` | Full review + save to `design-review.md` |
-| `/design-review --summary` | Score + top 5 issues only |
-| `/design-review --demo` | Demo readiness check (lorem ipsum, placeholders, TODOs, console.logs) |
-| `/design-review --health` | Design system health (token usage %, raw value count, design debt) |
-| `/design-review --history` | View score trend over time without re-running review |
-| `/design-review --benchmark` | Compare scores across your projects |
-| `/design-review --init` | Setup wizard — saves project config to `.designreviewrc.json` |
-| `/design-review --no-suppress` | Ignore all inline suppression comments |
-| | |
-| **Design Enhancement Mode** | |
-| `/design-review --redesign` | Full redesign with new visual identity (bold, distinctive) |
-| `/design-review --enhance` | Polish and elevate current design (keep identity, improve quality) |
-| `/design-review --enhance animations` | Add/improve motion and micro-interactions only |
-| `/design-review --enhance effects` | Add eye-catching visual effects (glows, gradients, 3D, parallax, orbs) |
-| `/design-review --enhance colors` | Improve color system, fix contrast, add dark mode |
-| `/design-review --enhance typography` | Choose distinctive fonts, establish type scale |
-| `/design-review --enhance spacing` | Normalize spacing to a consistent scale |
-| `/design-review --enhance layout` | Upgrade layout (bento grid, asymmetric, masonry, split-screen) |
-| `/design-review --enhance images` | Add image treatments (duotone, masks, parallax, hover zoom) |
-| `/design-review --enhance graphics` | Add SVG decorations (dividers, blobs, patterns, animated icons) |
-| `/design-review --enhance components` | Upgrade component designs (pick hero/card/pricing/testimonial variants) |
-| `/design-review --enhance forms` | Polish forms (floating labels, validation animation, wizard, glow) |
-| `/design-review --enhance nav` | Upgrade navigation (shrinking header, scroll spy, drawer, mega menu) |
+### Review (audit only — no file changes)
+
+| Command | What It Does |
+|---------|-------------|
+| `/dr` | Full review with interactive flow |
+| `/dr score` | Quick score dashboard only |
+| `/dr fix` | Review + propose fixes (shows plan, asks first) |
+| `/dr diff` | Review only changed files |
+| `/dr save` | Review + save report to file |
+| `/dr demo` | Check for lorem ipsum, TODOs, placeholders |
+| `/dr health` | Design system token usage report |
+| `/dr history` | Score trend over time |
+| `/dr a11y` | Accessibility audit only |
+
+### Enhance (improves your design — asks before changing)
+
+| Command | What It Does |
+|---------|-------------|
+| `/dr enhance` | Polish current design (keeps identity) |
+| `/dr redesign` | Bold new visual identity |
+| `/dr enhance animations` | Add motion & micro-interactions |
+| `/dr enhance effects` | Add eye-catching visuals (glows, parallax, orbs) |
+| `/dr enhance colors` | Fix color system + add dark mode |
+| `/dr enhance typography` | Upgrade fonts & type scale |
+| `/dr enhance layout` | Better layouts (bento, masonry, split-screen) |
+| `/dr enhance images` | Image treatments (duotone, masks, zoom) |
+| `/dr enhance graphics` | SVG decorations (dividers, blobs, patterns) |
+| `/dr enhance components` | Upgrade hero, cards, pricing, testimonials |
+| `/dr enhance forms` | Floating labels, validation, wizard |
+| `/dr enhance nav` | Shrinking header, drawer, mega menu |
 
 ---
 
